@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,13 +31,14 @@
             font-family: 'Inter', sans-serif;
         }
 
-        html, body {
+        html,
+        body {
             margin: 0;
             padding: 0;
             width: 100%;
             overflow-x: hidden;
         }
-        
+
         body {
             background-color: var(--bg-light);
             color: var(--text-color);
@@ -53,7 +55,7 @@
             overflow: visible;
             width: 100%;
         }
-        
+
         .navbar::after {
             content: '';
             position: absolute !important;
@@ -62,22 +64,22 @@
             right: 0 !important;
             width: 100% !important;
             height: 40px !important;
-            background: linear-gradient(to bottom, 
-                rgba(26, 26, 46, 0.98) 0%,
-                rgba(26, 26, 46, 0.95) 15%,
-                rgba(26, 26, 46, 0.88) 30%,
-                rgba(26, 26, 46, 0.75) 45%,
-                rgba(26, 26, 46, 0.6) 60%,
-                rgba(26, 26, 46, 0.4) 75%,
-                rgba(26, 26, 46, 0.2) 85%,
-                transparent 100%);
+            background: linear-gradient(to bottom,
+                    rgba(26, 26, 46, 0.98) 0%,
+                    rgba(26, 26, 46, 0.95) 15%,
+                    rgba(26, 26, 46, 0.88) 30%,
+                    rgba(26, 26, 46, 0.75) 45%,
+                    rgba(26, 26, 46, 0.6) 60%,
+                    rgba(26, 26, 46, 0.4) 75%,
+                    rgba(26, 26, 46, 0.2) 85%,
+                    transparent 100%);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             pointer-events: none !important;
             z-index: 1001 !important;
             display: block !important;
         }
-        
+
         .navbar::before {
             content: '';
             position: absolute !important;
@@ -86,47 +88,47 @@
             right: 0 !important;
             width: 100% !important;
             height: 1px !important;
-            background: linear-gradient(to right, 
-                transparent 0%, 
-                transparent 15%,
-                rgba(0, 212, 255, 0.2) 25%,
-                rgba(0, 212, 255, 0.4) 35%,
-                rgba(0, 212, 255, 0.6) 42%,
-                rgba(0, 212, 255, 0.75) 47%,
-                rgba(0, 212, 255, 0.9) 50%,
-                rgba(0, 212, 255, 0.75) 53%,
-                rgba(0, 212, 255, 0.6) 58%,
-                rgba(0, 212, 255, 0.4) 65%,
-                rgba(0, 212, 255, 0.2) 75%,
-                transparent 85%,
-                transparent 100%) !important;
+            background: linear-gradient(to right,
+                    transparent 0%,
+                    transparent 15%,
+                    rgba(0, 212, 255, 0.2) 25%,
+                    rgba(0, 212, 255, 0.4) 35%,
+                    rgba(0, 212, 255, 0.6) 42%,
+                    rgba(0, 212, 255, 0.75) 47%,
+                    rgba(0, 212, 255, 0.9) 50%,
+                    rgba(0, 212, 255, 0.75) 53%,
+                    rgba(0, 212, 255, 0.6) 58%,
+                    rgba(0, 212, 255, 0.4) 65%,
+                    rgba(0, 212, 255, 0.2) 75%,
+                    transparent 85%,
+                    transparent 100%) !important;
             pointer-events: none !important;
             z-index: 1002 !important;
             display: block !important;
         }
-        
+
         .navbar.scrolled {
             background: #1a1a2e !important;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             position: sticky !important;
             top: 0 !important;
         }
-        
+
         .navbar.scrolled::after {
-            background: linear-gradient(to right, 
-                transparent 0%, 
-                transparent 15%,
-                rgba(0, 212, 255, 0.25) 25%,
-                rgba(0, 212, 255, 0.45) 35%,
-                rgba(0, 212, 255, 0.65) 42%,
-                rgba(0, 212, 255, 0.8) 47%,
-                rgba(0, 212, 255, 0.95) 50%,
-                rgba(0, 212, 255, 0.8) 53%,
-                rgba(0, 212, 255, 0.65) 58%,
-                rgba(0, 212, 255, 0.45) 65%,
-                rgba(0, 212, 255, 0.25) 75%,
-                transparent 85%,
-                transparent 100%) !important;
+            background: linear-gradient(to right,
+                    transparent 0%,
+                    transparent 15%,
+                    rgba(0, 212, 255, 0.25) 25%,
+                    rgba(0, 212, 255, 0.45) 35%,
+                    rgba(0, 212, 255, 0.65) 42%,
+                    rgba(0, 212, 255, 0.8) 47%,
+                    rgba(0, 212, 255, 0.95) 50%,
+                    rgba(0, 212, 255, 0.8) 53%,
+                    rgba(0, 212, 255, 0.65) 58%,
+                    rgba(0, 212, 255, 0.45) 65%,
+                    rgba(0, 212, 255, 0.25) 75%,
+                    transparent 85%,
+                    transparent 100%) !important;
         }
 
         /* Sidebar Styles */
@@ -356,9 +358,17 @@
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         /* Navbar Notification Bell */
@@ -390,11 +400,13 @@
 
         /* Navbar spacing improvements */
         .navbar-nav .nav-item {
-            margin: 0 0.75rem; /* Spacing lebih besar lagi */
+            margin: 0 0.75rem;
+            /* Spacing lebih besar lagi */
         }
 
         .navbar-nav .nav-link {
-            padding: 0.6rem 1rem; /* Padding lebih besar lagi */
+            padding: 0.6rem 1rem;
+            /* Padding lebih besar lagi */
             border-radius: 10px;
             transition: all 0.3s ease;
         }
@@ -405,17 +417,20 @@
 
         /* Navbar container padding */
         .navbar {
-            padding: 1rem 0; /* Padding vertikal lebih besar */
+            padding: 1rem 0;
+            /* Padding vertikal lebih besar */
         }
 
         .navbar-brand {
-            font-size: 1.5rem; /* Brand text lebih besar */
+            font-size: 1.5rem;
+            /* Brand text lebih besar */
             font-weight: 700;
         }
 
         /* Notification bell styling */
         #notificationBell {
-            padding: 0.6rem 1rem !important; /* Sama dengan nav-link lainnya */
+            padding: 0.6rem 1rem !important;
+            /* Sama dengan nav-link lainnya */
             border-radius: 10px !important;
             transition: all 0.3s ease !important;
         }
@@ -425,7 +440,8 @@
         }
 
         #notificationBell i {
-            font-size: 1rem; /* Sama dengan icon lainnya */
+            font-size: 1rem;
+            /* Sama dengan icon lainnya */
         }
 
 
@@ -500,11 +516,11 @@
             background: rgba(255, 255, 255, 0.1);
             color: #ffffff;
         }
-        
+
         .navbar-toggler {
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        
+
         .navbar-toggler-icon {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
@@ -635,13 +651,13 @@
                 width: 100%;
                 justify-content: center;
             }
-            
+
             .quantity-btn {
                 width: 36px;
                 height: 36px;
                 font-size: 16px;
             }
-            
+
             .quantity-input {
                 width: 60px;
                 height: 36px;
@@ -657,7 +673,7 @@
             position: relative;
             display: inline-block;
         }
-        
+
         .logo-g::after {
             content: '→';
             position: absolute;
@@ -667,18 +683,18 @@
             color: #4dd0e1;
             font-weight: 400;
         }
-        
+
         .navbar-brand {
             padding: 0;
             margin-right: 2rem;
         }
-        
+
         .navbar-brand:hover .logo-g {
             color: #4dd0e1;
             transform: scale(1.05);
             transition: all 0.3s ease;
         }
-        
+
         /* Search Bar Styling */
         .navbar-search {
             position: relative;
@@ -686,7 +702,7 @@
             max-width: 400px;
             margin: 0 2rem;
         }
-        
+
         .search-icon {
             position: absolute;
             left: 15px;
@@ -696,7 +712,7 @@
             font-size: 1rem;
             z-index: 2;
         }
-        
+
         .search-input {
             width: 100%;
             padding: 10px 15px 10px 45px;
@@ -706,11 +722,11 @@
             color: #ffffff;
             font-size: 0.95rem;
         }
-        
+
         .search-input::placeholder {
             color: rgba(255, 255, 255, 0.6);
         }
-        
+
         .search-input:focus {
             outline: none;
             background: #323248;
@@ -756,7 +772,7 @@
         .nav-link::after {
             display: none;
         }
-        
+
         /* Login and Register Buttons */
         .btn-login {
             background: transparent;
@@ -769,13 +785,13 @@
             transition: all 0.3s ease;
             margin-right: 10px;
         }
-        
+
         .btn-login:hover {
             background: rgba(255, 255, 255, 0.1);
             color: #ffffff;
             border-color: #ffffff;
         }
-        
+
         .btn-register {
             background: #6c5ce7;
             border: none;
@@ -786,43 +802,43 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        
+
         .btn-register:hover {
             background: #5f4fd8;
             color: #ffffff;
         }
-        
+
         /* Dropdown Menu Styling for Dark Theme */
         .dropdown-menu {
             background: #2a2a3e;
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
         }
-        
+
         .dropdown-item {
             color: #ffffff;
         }
-        
+
         .dropdown-item:hover {
             background: rgba(255, 255, 255, 0.1);
             color: #ffffff;
         }
-        
+
         .dropdown-divider {
             border-color: rgba(255, 255, 255, 0.1);
         }
 
         .wallet-balance {
-            background: linear-gradient(135deg, 
-                rgba(0, 212, 170, 0.95) 0%, 
-                rgba(0, 180, 148, 0.85) 50%,
-                rgba(0, 150, 136, 0.9) 100%);
+            background: linear-gradient(135deg,
+                    rgba(0, 212, 170, 0.95) 0%,
+                    rgba(0, 180, 148, 0.85) 50%,
+                    rgba(0, 150, 136, 0.9) 100%);
             color: white;
             padding: 0.6rem 1.2rem;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 700;
-            box-shadow: 
+            box-shadow:
                 0 8px 25px rgba(0, 212, 170, 0.4),
                 0 4px 15px rgba(0, 0, 0, 0.1),
                 inset 0 1px 0 rgba(255, 255, 255, 0.3);
@@ -844,16 +860,16 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.2), 
-                transparent);
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.2),
+                    transparent);
             transition: left 0.6s ease;
         }
 
         .wallet-balance:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 
+            box-shadow:
                 0 12px 35px rgba(0, 212, 170, 0.5),
                 0 6px 20px rgba(0, 0, 0, 0.15),
                 inset 0 1px 0 rgba(255, 255, 255, 0.4);
@@ -868,7 +884,7 @@
             flex-wrap: wrap;
         }
 
-        .row > [class*='col-'] {
+        .row>[class*='col-'] {
             display: flex;
             flex-direction: column;
         }
@@ -994,6 +1010,7 @@
             from {
                 opacity: 0.5;
             }
+
             to {
                 opacity: 0.8;
             }
@@ -1041,7 +1058,7 @@
             background: var(--bg-card);
             border-radius: 0 0 16px 16px;
         }
-        
+
         .modal-backdrop {
             background-color: rgba(0, 0, 0, 0.7);
         }
@@ -1082,7 +1099,7 @@
             border: 1px solid var(--border-color);
             color: var(--text-color);
         }
-        
+
         .form-control:focus,
         .form-select:focus {
             background: var(--bg-input);
@@ -1090,11 +1107,11 @@
             color: var(--text-color);
             box-shadow: 0 0 0 0.2rem rgba(0, 212, 170, 0.25);
         }
-        
+
         .form-control::placeholder {
             color: var(--text-muted);
         }
-        
+
         .form-select option {
             background: var(--bg-card);
             color: var(--text-color);
@@ -1152,7 +1169,7 @@
             margin-bottom: 0.5rem;
             line-height: 1.3;
         }
-        
+
         .card-text {
             color: var(--text-muted);
         }
@@ -1175,50 +1192,886 @@
             box-shadow: var(--shadow);
             color: var(--text-color);
         }
-        
+
         .alert-success {
             background: rgba(0, 212, 170, 0.2);
             border-color: var(--primary-color);
             color: var(--text-color);
         }
-        
+
         .alert-danger {
             background: rgba(220, 53, 69, 0.2);
             border-color: #dc3545;
             color: var(--text-color);
         }
-        
+
         .text-muted {
             color: var(--text-muted) !important;
         }
-        
+
         .pagination .page-link {
             background: var(--bg-card);
             border-color: var(--border-color);
             color: var(--text-color);
         }
-        
+
         .pagination .page-link:hover {
             background: var(--bg-input);
             border-color: var(--primary-color);
             color: var(--text-color);
         }
-        
+
         .pagination .page-item.active .page-link {
             background: var(--primary-color);
             border-color: var(--primary-color);
             color: white;
         }
+
+        /* Upcoming Games Section */
+        .upcoming-games-wrapper {
+            position: relative;
+            padding: 0 60px;
+        }
+
+        .upcoming-games-container {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 1rem 0;
+        }
+
+        .upcoming-games-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .upcoming-game-card {
+            flex: 0 0 auto;
+            width: 340px;
+            background: rgba(42, 42, 62, 0.9);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .upcoming-game-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 212, 170, 0.3);
+            border-color: rgba(0, 212, 170, 0.5);
+        }
+
+        .upcoming-game-image {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .upcoming-game-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .upcoming-game-card:hover .upcoming-game-image img {
+            transform: scale(1.1);
+        }
+
+        .favorite-btn {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 45px;
+            height: 45px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #ffffff;
+            z-index: 10;
+        }
+
+        .favorite-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+            border-color: #ff4757;
+            transform: scale(1.1);
+        }
+
+        .favorite-btn i {
+            font-size: 1.2rem;
+        }
+
+        .upcoming-game-info {
+            padding: 1.5rem;
+            background: rgba(26, 26, 46, 0.95);
+        }
+
+        .upcoming-game-title {
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .upcoming-game-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .best-seller-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1a1a2e;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .best-seller-badge i {
+            color: #1a1a2e;
+        }
+
+        .upcoming-game-price {
+            color: #00d4aa;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .btn-upcoming {
+            background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
+        }
+
+        .btn-upcoming:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 170, 0.5);
+            background: linear-gradient(135deg, #00a8cc 0%, #0090b8 100%);
+        }
+
+        .seller-link-upcoming {
+            transition: all 0.3s ease;
+        }
+
+        .seller-link-upcoming:hover {
+            color: #00d4aa !important;
+            transform: translateX(2px);
+        }
+
+        .upcoming-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 212, 170, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .upcoming-nav:hover {
+            background: rgba(0, 168, 204, 1);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 212, 170, 0.5);
+        }
+
+        .upcoming-nav-prev {
+            left: 0;
+        }
+
+        .upcoming-nav-next {
+            right: 0;
+        }
+
+        @media (max-width: 768px) {
+            .upcoming-games-wrapper {
+                padding: 0 20px;
+            }
+
+            .upcoming-game-card {
+                width: 280px;
+            }
+
+            .upcoming-game-image {
+                height: 320px;
+            }
+
+            .upcoming-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Landscape Card Design */
+        .card-landscape {
+            background: rgba(42, 42, 62, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .card-landscape:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 45px rgba(0, 212, 170, 0.3);
+            border-color: rgba(0, 212, 170, 0.5);
+            background: rgba(42, 42, 62, 0.85);
+        }
+
+        .card-landscape-image {
+            position: relative;
+            width: 280px;
+            min-width: 280px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .card-landscape-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .card-landscape:hover .card-landscape-image img {
+            transform: scale(1.1);
+        }
+
+        .favorite-btn-landscape {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #ffffff;
+            z-index: 10;
+        }
+
+        .favorite-btn-landscape:hover {
+            background: rgba(0, 0, 0, 0.9);
+            border-color: #ff4757;
+            transform: scale(1.1);
+        }
+
+        .discount-badge-landscape {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            z-index: 10;
+        }
+
+        .card-landscape-content {
+            flex: 1;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-landscape-title {
+            color: #ffffff;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-landscape-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .card-landscape-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 1rem;
+        }
+
+        .original-price-landscape {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: line-through;
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .current-price-landscape {
+            color: #00d4aa;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .btn-add-to-cart-landscape {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            color: #1a1a2e;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-add-to-cart-landscape:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);
+            color: white;
+        }
+
+        .seller-link-landscape {
+            color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+        }
+
+        .seller-link-landscape:hover {
+            color: #00d4aa !important;
+        }
+
+        @media (max-width: 768px) {
+            .card-landscape {
+                flex-direction: column;
+            }
+
+            .card-landscape-image {
+                width: 100%;
+                min-width: 100%;
+                height: 200px;
+            }
+
+            .card-landscape-content {
+                padding: 1rem;
+            }
+
+            .btn-add-to-cart-landscape {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Browse Page Styles */
+        .special-events-section {
+            margin-bottom: 3rem;
+        }
+        
+        .special-events-title {
+            color: #ffffff;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .special-banner {
+            background: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 50%, #feca57 100%);
+            border-radius: 24px;
+            overflow: hidden;
+            padding: 3rem;
+            position: relative;
+            min-height: 400px;
+        }
+        
+        .special-banner-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .special-banner-text {
+            max-width: 400px;
+        }
+        
+        .special-banner-subtitle {
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .special-banner-title {
+            color: #ffffff;
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .special-banner-date {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .special-banner-description {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .btn-special-banner {
+            background: #ffffff;
+            color: #ff6b6b;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-special-banner:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+            background: #f8f8f8;
+        }
+        
+        .special-banner-visual {
+            text-align: right;
+        }
+        
+        .special-visual-text {
+            color: #ffffff;
+            font-size: 6rem;
+            font-weight: 900;
+            line-height: 1;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        .special-visual-sale {
+            color: #ffffff;
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        .special-visual-discount {
+            background: #ff4757;
+            color: #ffffff;
+            padding: 0.8rem 2rem;
+            border-radius: 15px;
+            font-weight: 900;
+            font-size: 1.5rem;
+            display: inline-block;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+        }
+        
+        /* Browse Sidebar */
+        .browse-sidebar {
+            background: rgba(42, 42, 62, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .filter-section {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1rem;
+        }
+        
+        .filter-section:last-child {
+            border-bottom: none;
+        }
+        
+        .filter-title {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .btn-reset-filter {
+            background: none;
+            border: none;
+            color: #00d4aa;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-reset-filter:hover {
+            color: #00a8cc;
+        }
+        
+        .search-filter-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-filter-box i {
+            position: absolute;
+            left: 15px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .form-control-filter {
+            background: rgba(26, 26, 46, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border-radius: 10px;
+            padding: 0.7rem 1rem 0.7rem 40px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control-filter:focus {
+            outline: none;
+            border-color: #00d4aa;
+            background: rgba(26, 26, 46, 0.7);
+        }
+        
+        .form-control-filter::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .filter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-header:hover {
+            color: #00d4aa;
+        }
+        
+        .filter-header h6 {
+            margin: 0;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        .filter-header i {
+            color: rgba(255, 255, 255, 0.7);
+            transition: transform 0.3s ease;
+        }
+        
+        .filter-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .filter-content.active {
+            max-height: 500px;
+            padding-top: 1rem;
+        }
+        
+        .filter-option {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-option:hover {
+            color: #00d4aa;
+        }
+        
+        .filter-option input[type="radio"] {
+            margin-right: 0.75rem;
+            accent-color: #00d4aa;
+        }
+        
+        .filter-option span {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .price-inputs {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .price-inputs input {
+            flex: 1;
+            padding: 0.6rem 1rem;
+        }
+        
+        .price-inputs span {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .btn-filter-apply {
+            background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-filter-apply:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 212, 170, 0.4);
+        }
+        
+        /* Browse Card */
+        .browse-card {
+            background: rgba(42, 42, 62, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .browse-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 45px rgba(0, 212, 170, 0.3);
+            border-color: rgba(0, 212, 170, 0.5);
+            background: rgba(42, 42, 62, 0.85);
+        }
+        
+        .browse-card-image {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .browse-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .browse-card:hover .browse-card-image img {
+            transform: scale(1.1);
+        }
+        
+        .favorite-btn-browse {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #ffffff;
+            z-index: 10;
+        }
+        
+        .favorite-btn-browse:hover {
+            background: rgba(0, 0, 0, 0.9);
+            border-color: #ff4757;
+            transform: scale(1.1);
+        }
+        
+        .discount-badge-browse {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            z-index: 10;
+        }
+        
+        .browse-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .browse-card-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .browse-card-title {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .browse-card-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        
+        .browse-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 0.75rem;
+        }
+        
+        .original-price-browse {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: line-through;
+            font-size: 0.85rem;
+            display: block;
+        }
+        
+        .current-price-browse {
+            color: #00d4aa;
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .seller-link-browse {
+            color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+        }
+        
+        .seller-link-browse:hover {
+            color: #00d4aa !important;
+        }
+        
+        .btn-add-cart-browse {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            color: #1a1a2e;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-add-cart-browse:hover {
+            transform: translateY(-2px) scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 212, 170, 0.4);
+            background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);
+            color: white;
+        }
+        
+        @media (max-width: 992px) {
+            .special-banner {
+                padding: 2rem;
+            }
+            
+            .special-banner-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .special-banner-visual {
+                text-align: center;
+                margin-top: 2rem;
+            }
+            
+            .browse-sidebar {
+                margin-bottom: 2rem;
+            }
+        }
         
         .table {
             color: var(--text-color);
-        }
-        
-        .table-dark {
+        }        .table-dark {
             background: var(--bg-card);
         }
-        
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             color: var(--text-color);
         }
 
@@ -1237,7 +2090,7 @@
             color: var(--text-color);
             box-shadow: 0 0 0 0.2rem rgba(0, 212, 170, 0.25);
         }
-        
+
         .form-control::placeholder {
             color: var(--text-muted);
         }
@@ -1249,7 +2102,7 @@
             border-radius: 12px;
             padding: 12px 16px;
         }
-        
+
         .form-select:focus {
             background: var(--bg-input);
             color: var(--text-color);
@@ -1257,13 +2110,13 @@
 
         /* Hero Section - Only affects hero section, not header/navbar */
         .hero-section {
-            background: linear-gradient(135deg, 
-                #0a0a0a 0%, 
-                #1a1a2e 20%, 
-                #16213e 40%, 
-                #0f3460 60%, 
-                #00d4aa 80%, 
-                #00b894 100%);
+            background: linear-gradient(135deg,
+                    #0a0a0a 0%,
+                    #1a1a2e 20%,
+                    #16213e 40%,
+                    #0f3460 60%,
+                    #00d4aa 80%,
+                    #00b894 100%);
             color: white;
             padding: 0;
             margin-bottom: 2rem;
@@ -1274,7 +2127,7 @@
             display: flex;
             align-items: center;
         }
-        
+
         .main-content .container .hero-section {
             margin-top: 0 !important;
             margin-bottom: 0 !important;
@@ -1283,17 +2136,17 @@
             width: 100vw !important;
             max-width: 100vw !important;
         }
-        
+
         .main-content {
             margin-top: 0;
             padding-top: 0;
         }
-        
+
         .main-content .container {
             padding-top: 0;
         }
-        
-        .main-content .container > .hero-section:first-child {
+
+        .main-content .container>.hero-section:first-child {
             margin-top: 0 !important;
         }
 
@@ -1306,7 +2159,7 @@
             height: 100%;
             z-index: 1;
         }
-        
+
         /* Blur Gradient Overlay - Top & Bottom */
         .hero-slider::before {
             content: '';
@@ -1315,15 +2168,15 @@
             left: 0;
             right: 0;
             height: 150px;
-            background: linear-gradient(to bottom, 
-                var(--bg-light) 0%, 
-                rgba(248, 249, 250, 0.95) 20%,
-                rgba(248, 249, 250, 0.7) 50%,
-                transparent 100%);
+            background: linear-gradient(to bottom,
+                    var(--bg-light) 0%,
+                    rgba(248, 249, 250, 0.95) 20%,
+                    rgba(248, 249, 250, 0.7) 50%,
+                    transparent 100%);
             z-index: 10;
             pointer-events: none;
         }
-        
+
         .hero-slider::after {
             content: '';
             position: absolute;
@@ -1331,15 +2184,15 @@
             left: 0;
             right: 0;
             height: 150px;
-            background: linear-gradient(to top, 
-                var(--bg-light) 0%, 
-                rgba(248, 249, 250, 0.95) 20%,
-                rgba(248, 249, 250, 0.7) 50%,
-                transparent 100%);
+            background: linear-gradient(to top,
+                    var(--bg-light) 0%,
+                    rgba(248, 249, 250, 0.95) 20%,
+                    rgba(248, 249, 250, 0.7) 50%,
+                    transparent 100%);
             z-index: 10;
             pointer-events: none;
         }
-        
+
         /* Blur effect on top of hero section - menyatu dengan header */
         .hero-section::before {
             content: '';
@@ -1348,24 +2201,24 @@
             left: 0;
             right: 0;
             height: 18%;
-            background: linear-gradient(to bottom, 
-                rgba(26, 26, 46, 0.98) 0%,
-                rgba(26, 26, 46, 0.95) 8%,
-                rgba(26, 26, 46, 0.88) 15%,
-                rgba(26, 26, 46, 0.75) 25%,
-                rgba(26, 26, 46, 0.6) 35%,
-                rgba(26, 26, 46, 0.45) 45%,
-                rgba(26, 26, 46, 0.3) 55%,
-                rgba(26, 26, 46, 0.18) 65%,
-                rgba(26, 26, 46, 0.1) 75%,
-                rgba(26, 26, 46, 0.05) 85%,
-                transparent 100%);
+            background: linear-gradient(to bottom,
+                    rgba(26, 26, 46, 0.98) 0%,
+                    rgba(26, 26, 46, 0.95) 8%,
+                    rgba(26, 26, 46, 0.88) 15%,
+                    rgba(26, 26, 46, 0.75) 25%,
+                    rgba(26, 26, 46, 0.6) 35%,
+                    rgba(26, 26, 46, 0.45) 45%,
+                    rgba(26, 26, 46, 0.3) 55%,
+                    rgba(26, 26, 46, 0.18) 65%,
+                    rgba(26, 26, 46, 0.1) 75%,
+                    rgba(26, 26, 46, 0.05) 85%,
+                    transparent 100%);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             z-index: 5;
             pointer-events: none;
         }
-        
+
         /* Blur effect on bottom of hero section - gradasi halus menyatu dengan gambar */
         .hero-section::after {
             content: '';
@@ -1374,24 +2227,24 @@
             left: 0;
             right: 0;
             height: 20%;
-            background: linear-gradient(to top, 
-                rgba(15, 15, 30, 0.85) 0%,
-                rgba(15, 15, 30, 0.7) 10%,
-                rgba(15, 15, 30, 0.55) 20%,
-                rgba(15, 15, 30, 0.4) 30%,
-                rgba(15, 15, 30, 0.28) 40%,
-                rgba(15, 15, 30, 0.18) 50%,
-                rgba(15, 15, 30, 0.1) 60%,
-                rgba(15, 15, 30, 0.05) 70%,
-                rgba(15, 15, 30, 0.02) 80%,
-                transparent 90%,
-                transparent 100%);
+            background: linear-gradient(to top,
+                    rgba(15, 15, 30, 0.85) 0%,
+                    rgba(15, 15, 30, 0.7) 10%,
+                    rgba(15, 15, 30, 0.55) 20%,
+                    rgba(15, 15, 30, 0.4) 30%,
+                    rgba(15, 15, 30, 0.28) 40%,
+                    rgba(15, 15, 30, 0.18) 50%,
+                    rgba(15, 15, 30, 0.1) 60%,
+                    rgba(15, 15, 30, 0.05) 70%,
+                    rgba(15, 15, 30, 0.02) 80%,
+                    transparent 90%,
+                    transparent 100%);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             z-index: 5;
             pointer-events: none;
         }
-        
+
         /* Dark Overlay for better text contrast - layer terpisah */
         .hero-section .dark-overlay {
             position: absolute;
@@ -1399,10 +2252,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(90deg, 
-                rgba(0, 0, 0, 0.5) 0%, 
-                rgba(0, 0, 0, 0.3) 50%, 
-                rgba(0, 0, 0, 0.5) 100%);
+            background: linear-gradient(90deg,
+                    rgba(0, 0, 0, 0.5) 0%,
+                    rgba(0, 0, 0, 0.3) 50%,
+                    rgba(0, 0, 0, 0.5) 100%);
             pointer-events: none;
             z-index: 3;
         }
@@ -1424,12 +2277,12 @@
         .hero-slide.active {
             opacity: 0.85;
         }
-        
+
         /* Dark Overlay for better text contrast - menggunakan pseudo-element terpisah */
         .hero-section {
             position: relative;
         }
-        
+
         .hero-section .dark-overlay {
             content: '';
             position: absolute;
@@ -1437,14 +2290,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(90deg, 
-                rgba(0, 0, 0, 0.5) 0%, 
-                rgba(0, 0, 0, 0.3) 50%, 
-                rgba(0, 0, 0, 0.5) 100%);
+            background: linear-gradient(90deg,
+                    rgba(0, 0, 0, 0.5) 0%,
+                    rgba(0, 0, 0, 0.3) 50%,
+                    rgba(0, 0, 0, 0.5) 100%);
             pointer-events: none;
             z-index: 2;
         }
-        
+
         /* Hero Navigation Arrows */
         .hero-nav {
             position: absolute;
@@ -1464,31 +2317,31 @@
             transition: all 0.3s ease;
             font-size: 1.2rem;
         }
-        
+
         .hero-nav:hover {
             background: rgba(0, 0, 0, 0.8);
             border-color: rgba(255, 255, 255, 0.8);
             transform: translateY(-50%) scale(1.1);
         }
-        
+
         .hero-nav-prev {
             left: 20px;
         }
-        
+
         .hero-nav-next {
             right: 20px;
         }
 
         .hero-slide:nth-child(1) {
-            background-image: url('{{ asset("img/gambar 1.jpeg") }}');
+            background-image: url('{{ asset('img/gambar 1.jpeg') }}');
         }
 
         .hero-slide:nth-child(2) {
-            background-image: url('{{ asset("img/roblox.jpg") }}');
+            background-image: url('{{ asset('img/roblox.jpg') }}');
         }
 
         .hero-slide:nth-child(3) {
-            background-image: url('{{ asset("img/gambar 3.jpg") }}');
+            background-image: url('{{ asset('img/gambar 3.jpg') }}');
         }
 
         /* Hero Content Layout */
@@ -1503,12 +2356,12 @@
             padding-left: 2rem;
             padding-right: 2rem;
         }
-        
+
         .hero-content-left {
             position: relative;
             z-index: 5;
         }
-        
+
         .hero-content-right {
             position: relative;
             z-index: 5;
@@ -1520,40 +2373,84 @@
 
         /* Animations */
         @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
-            50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 1;
+            }
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
         }
 
         @keyframes slideInLeft {
-            0% { transform: translateX(-100px); opacity: 0; }
-            100% { transform: translateX(0); opacity: 1; }
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
 
         @keyframes slideInRight {
-            0% { transform: translateX(100px); opacity: 0; }
-            100% { transform: translateX(0); opacity: 1; }
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
 
         @keyframes fadeInUp {
-            0% { transform: translateY(30px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         /* Hero Content Animations */
         .hero-content-left {
             animation: slideInLeft 1s ease-out;
         }
-        
+
         .hero-content-right {
             animation: slideInRight 1s ease-out 0.3s both;
         }
@@ -1562,7 +2459,7 @@
             font-size: 4.5rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
-            text-shadow: 
+            text-shadow:
                 0 4px 8px rgba(0, 0, 0, 0.8),
                 0 2px 4px rgba(0, 0, 0, 0.6);
             position: relative;
@@ -1572,13 +2469,13 @@
             color: #ffffff;
             text-transform: uppercase;
         }
-        
+
         .hero-description {
             font-size: 1.1rem;
             font-weight: 400;
             margin-bottom: 2rem;
             opacity: 0.95;
-            text-shadow: 
+            text-shadow:
                 0 2px 4px rgba(0, 0, 0, 0.7);
             position: relative;
             z-index: 5;
@@ -1587,13 +2484,13 @@
             color: #ffffff;
             max-width: 600px;
         }
-        
+
         .hero-price {
             font-size: 2.5rem;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 1.5rem;
-            text-shadow: 
+            text-shadow:
                 0 2px 4px rgba(0, 0, 0, 0.8);
             position: relative;
             z-index: 5;
@@ -1626,7 +2523,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             color: #2d3748;
         }
-        
+
         .btn-hero-wishlist {
             background: transparent;
             border: 1px solid rgba(255, 255, 255, 0.8);
@@ -1680,7 +2577,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transition: left 0.8s ease;
             z-index: 1;
         }
@@ -1691,10 +2588,10 @@
 
         .product-card:hover {
             transform: translateY(-12px) scale(1.03);
-            box-shadow: 
-                0 25px 50px rgba(0,0,0,0.15),
-                0 10px 25px rgba(0,0,0,0.1),
-                inset 0 1px 0 rgba(255,255,255,0.2);
+            box-shadow:
+                0 25px 50px rgba(0, 0, 0, 0.15),
+                0 10px 25px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
             border-color: rgba(13, 110, 253, 0.2);
         }
 
@@ -1765,15 +2662,15 @@
             transition: all 0.3s ease;
         }
 
-        .seller-link:hover + .seller-avatar,
-        .seller-link:hover ~ .seller-avatar {
+        .seller-link:hover+.seller-avatar,
+        .seller-link:hover~.seller-avatar {
             transform: scale(1.1);
             box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
         }
 
         /* Prevent card hover when hovering seller link */
-        .seller-link:hover ~ *,
-        .seller-link:hover + * {
+        .seller-link:hover~*,
+        .seller-link:hover+* {
             pointer-events: none;
         }
 
@@ -1818,7 +2715,7 @@
             object-fit: cover;
             object-position: center;
         }
-        
+
         .order-item-image {
             width: 100%;
             height: 60px;
@@ -1928,7 +2825,7 @@
             border: 1px solid var(--border-color);
             padding: 1.2rem 1.5rem;
             border-radius: 20px;
-            box-shadow: 
+            box-shadow:
                 0 10px 30px rgba(0, 0, 0, 0.3),
                 0 4px 15px rgba(0, 212, 170, 0.15);
             margin-bottom: 2rem;
@@ -1946,10 +2843,10 @@
             left: 0;
             right: 0;
             height: 2px;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                rgba(0, 212, 170, 0.5) 50%, 
-                transparent 100%);
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(0, 212, 170, 0.5) 50%,
+                    transparent 100%);
         }
 
         .search-section .form-control,
@@ -1978,7 +2875,7 @@
             border-radius: 12px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 
+            box-shadow:
                 0 4px 15px rgba(0, 212, 170, 0.3),
                 0 2px 8px rgba(0, 0, 0, 0.1);
             border: none;
@@ -1993,16 +2890,16 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.3), 
-                transparent);
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.3),
+                    transparent);
             transition: left 0.5s ease;
         }
 
         .search-section .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 
+            box-shadow:
                 0 6px 25px rgba(0, 212, 170, 0.4),
                 0 4px 15px rgba(0, 0, 0, 0.15);
         }
@@ -2016,26 +2913,26 @@
             .hero-title {
                 font-size: 3rem;
             }
-            
+
             .hero-subtitle {
                 font-size: 1.2rem;
             }
-            
+
             .search-section {
                 padding: 1rem 1.2rem;
             }
-            
+
             .search-section .form-control,
             .search-section .form-select {
                 padding: 0.55rem 0.9rem;
                 font-size: 0.85rem;
             }
-            
+
             .search-section .btn {
                 padding: 0.55rem 1.1rem;
                 font-size: 0.85rem;
             }
-            
+
             .wallet-balance {
                 max-width: 150px;
                 font-size: 0.8rem;
@@ -2048,18 +2945,18 @@
             .navbar-brand {
                 font-size: 1.3rem;
             }
-            
+
             .logo-g {
                 font-size: 1.5rem;
             }
-            
+
             .navbar-search {
                 max-width: 100%;
                 margin: 0.5rem 0;
                 order: 3;
                 width: 100%;
             }
-            
+
             .navbar-nav {
                 flex-direction: column;
             }
@@ -2083,7 +2980,7 @@
             .navbar-toggler:hover {
                 background: rgba(255, 255, 255, 0.1);
             }
-            
+
             .btn-login,
             .btn-register {
                 width: 100%;
@@ -2095,56 +2992,56 @@
                 min-height: 100vh;
                 padding: 0;
             }
-            
+
             .hero-content-left,
             .hero-content-right {
                 text-align: center;
                 margin-bottom: 2rem;
             }
-            
+
             .hero-content-right {
                 align-items: center;
             }
-            
+
             .hero-title {
                 font-size: 2.5rem;
                 margin-bottom: 1rem;
             }
-            
+
             .hero-description {
                 font-size: 0.95rem;
                 margin-bottom: 1.5rem;
             }
-            
+
             .hero-price {
                 font-size: 2rem;
                 margin-bottom: 1rem;
             }
-            
+
             .hero-section .hero-buttons {
                 max-width: 100%;
             }
-            
+
             .btn-hero-buy,
             .btn-hero-wishlist {
                 padding: 14px 32px;
                 font-size: 1rem;
             }
-            
+
             .hero-nav {
                 width: 40px;
                 height: 40px;
                 font-size: 1rem;
             }
-            
+
             .hero-nav-prev {
                 left: 10px;
             }
-            
+
             .hero-nav-next {
                 right: 10px;
             }
-            
+
             .wallet-balance {
                 max-width: 120px;
                 font-size: 0.75rem;
@@ -2166,47 +3063,47 @@
                 padding: 0.5rem 1rem;
                 font-size: 0.8rem;
             }
-            
+
             .product-image {
                 height: 150px;
             }
-            
+
             .product-image img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 object-position: center;
             }
-            
+
             .card-body {
                 padding: 1rem;
             }
-            
+
             .card-title {
                 font-size: 1rem;
             }
-            
+
             .price-display {
                 font-size: 1.1rem;
             }
-            
+
             .card-text {
                 font-size: 0.8rem;
             }
-            
+
             .seller-info {
                 padding: 0.4rem;
             }
-            
+
             .seller-label {
                 font-size: 0.7rem;
             }
-            
+
             .robux-icon {
                 width: 18px !important;
                 height: 18px !important;
             }
-            
+
             .product-icon {
                 font-size: 3rem;
             }
@@ -2249,7 +3146,7 @@
                 min-height: 100vh;
                 padding: 0;
             }
-            
+
             .hero-section .container {
                 margin-top: 0;
             }
@@ -2257,17 +3154,17 @@
             .hero-title {
                 font-size: 2rem;
             }
-            
+
             .hero-subtitle {
                 font-size: 0.9rem;
             }
-            
+
             .hero-section .btn-light,
             .hero-section .btn-outline-light {
                 padding: 10px 16px;
                 font-size: 0.85rem;
             }
-            
+
             .wallet-balance {
                 max-width: 100px;
                 font-size: 0.7rem;
@@ -2292,48 +3189,48 @@
             .product-image {
                 height: 120px;
             }
-            
+
             .product-image img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 object-position: center;
             }
-            
+
             .card-body {
                 padding: 0.8rem;
             }
-            
+
             .card-title {
                 font-size: 0.9rem;
             }
-            
+
             .price-display {
                 font-size: 1rem;
             }
-            
+
             .card-text {
                 font-size: 0.75rem;
             }
-            
+
             .seller-info {
                 padding: 0.3rem;
             }
-            
+
             .seller-label {
                 font-size: 0.65rem;
             }
-            
+
             .robux-icon {
                 width: 16px !important;
                 height: 16px !important;
             }
-            
+
             .badge {
                 font-size: 0.7rem;
                 padding: 4px 8px;
             }
-            
+
             .product-icon {
                 font-size: 2.5rem;
             }
@@ -2360,11 +3257,11 @@
             .hero-section {
                 padding: 2rem 0;
             }
-            
+
             .hero-section::before {
                 height: 120px;
             }
-            
+
             .hero-section .container {
                 margin-top: 140px;
             }
@@ -2372,11 +3269,11 @@
             .hero-title {
                 font-size: 1.8rem;
             }
-            
+
             .hero-subtitle {
                 font-size: 0.85rem;
             }
-            
+
             .wallet-balance {
                 max-width: 90px;
                 font-size: 0.65rem;
@@ -2401,53 +3298,53 @@
             .product-image {
                 height: 100px;
             }
-            
+
             .product-image img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 object-position: center;
             }
-            
+
             .card-body {
                 padding: 0.6rem;
             }
-            
+
             .card-title {
                 font-size: 0.85rem;
             }
-            
+
             .price-display {
                 font-size: 0.9rem;
             }
-            
+
             .card-text {
                 font-size: 0.7rem;
             }
-            
+
             .seller-info {
                 padding: 0.25rem;
             }
-            
+
             .seller-label {
                 font-size: 0.6rem;
             }
-            
+
             .robux-icon {
                 width: 14px !important;
                 height: 14px !important;
             }
-            
+
             .badge {
                 font-size: 0.65rem;
                 padding: 3px 6px;
             }
-            
+
             .btn-primary {
                 font-size: 0.8rem;
                 padding: 6px 12px;
             }
-            
+
             .product-icon {
                 font-size: 2rem;
             }
@@ -2490,13 +3387,13 @@
                 height: auto;
                 margin-bottom: 1rem;
                 border-radius: 12px;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
                 transition: all 0.3s ease;
             }
 
             .card:hover {
                 transform: translateY(-2px);
-                box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
             }
 
             .card-body {
@@ -2840,10 +3737,11 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
-    
+
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
@@ -2852,10 +3750,10 @@
                 JajanGaming
             </a>
         </div>
-        
+
         <nav class="sidebar-nav">
             @auth
-                @if(auth()->user()->isUser())
+                @if (auth()->user()->isUser())
                     <div class="sidebar-section">Main Menu</div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -2884,7 +3782,7 @@
                             </a>
                         </li>
                     </ul>
-                    
+
                     <div class="sidebar-section">Account</div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -2897,11 +3795,11 @@
                             <a class="nav-link sidebar-notification" href="{{ route('notifications.index') }}">
                                 <i class="fas fa-bell"></i>
                                 Notifications
-                                <span class="badge sidebar-notification-badge" id="sidebarNotificationBadge" style="display: none;">0</span>
+                                <span class="badge sidebar-notification-badge" id="sidebarNotificationBadge"
+                                    style="display: none;">0</span>
                             </a>
                         </li>
                     </ul>
-                    
                 @elseif(auth()->user()->isAdmin())
                     <div class="sidebar-section">Main Menu</div>
                     <ul class="nav flex-column">
@@ -2931,7 +3829,7 @@
                             </a>
                         </li>
                     </ul>
-                    
+
                     <div class="sidebar-section">Administration</div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -2941,7 +3839,7 @@
                             </a>
                         </li>
                     </ul>
-                    
+
                     <div class="sidebar-section">Quick Actions</div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -2969,18 +3867,19 @@
                             </a>
                         </li>
                     </ul>
-                    
+
                     <div class="sidebar-section">Notifications</div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link sidebar-notification" href="{{ route('notifications.index') }}">
                                 <i class="fas fa-bell"></i>
                                 Notifications
-                                <span class="badge sidebar-notification-badge" id="sidebarNotificationBadge" style="display: none;">0</span>
+                                <span class="badge sidebar-notification-badge" id="sidebarNotificationBadge"
+                                    style="display: none;">0</span>
                             </a>
                         </li>
                     </ul>
-                    
+
                     <div class="sidebar-section">Account</div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -2990,7 +3889,6 @@
                             </a>
                         </li>
                     </ul>
-                    
                 @elseif(auth()->user()->isSeller())
                     <div class="sidebar-section">Seller Dashboard</div>
                     <ul class="nav flex-column">
@@ -3001,7 +3899,7 @@
                             </a>
                         </li>
                     </ul>
-                    
+
                     <div class="sidebar-section">Quick Actions</div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -3029,18 +3927,19 @@
                             </a>
                         </li>
                     </ul>
-                    
+
                     <div class="sidebar-section">Notifications</div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link sidebar-notification" href="{{ route('notifications.index') }}">
                                 <i class="fas fa-bell"></i>
                                 Notifications
-                                <span class="badge sidebar-notification-badge" id="sidebarNotificationBadge" style="display: none;">0</span>
+                                <span class="badge sidebar-notification-badge" id="sidebarNotificationBadge"
+                                    style="display: none;">0</span>
                             </a>
                         </li>
                     </ul>
-                    
+
                     <div class="sidebar-section">Account</div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -3053,31 +3952,32 @@
                 @endif
             @endauth
         </nav>
-        
+
         @auth
-        <div class="sidebar-footer">
-            <a href="{{ route('profile.index') }}" class="sidebar-user">
-                @if(auth()->user()->profile_photo)
-                    <img src="{{ asset('storage/' . auth()->user()->profile_photo) }}" alt="Profile">
-                @else
-                    <div style="width: 32px; height: 32px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
-                        <i class="fas fa-user text-white"></i>
+            <div class="sidebar-footer">
+                <a href="{{ route('profile.index') }}" class="sidebar-user">
+                    @if (auth()->user()->profile_photo)
+                        <img src="{{ asset('storage/' . auth()->user()->profile_photo) }}" alt="Profile">
+                    @else
+                        <div
+                            style="width: 32px; height: 32px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem;">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                    @endif
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name">{{ auth()->user()->name }}</div>
+                        <div class="sidebar-user-role">
+                            @if (auth()->user()->isAdmin())
+                                Administrator
+                            @elseif(auth()->user()->isSeller())
+                                Seller
+                            @else
+                                User
+                            @endif
+                        </div>
                     </div>
-                @endif
-                <div class="sidebar-user-info">
-                    <div class="sidebar-user-name">{{ auth()->user()->name }}</div>
-                    <div class="sidebar-user-role">
-                        @if(auth()->user()->isAdmin())
-                            Administrator
-                        @elseif(auth()->user()->isSeller())
-                            Seller
-                        @else
-                            User
-                        @endif
-                    </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
         @endauth
     </div>
 
@@ -3086,32 +3986,33 @@
             <button class="sidebar-toggle me-3" id="sidebarToggle">
                 <i class="fas fa-bars"></i>
             </button>
-            
+
             <!-- Logo G -->
             <a class="navbar-brand" href="{{ route('home') }}">
                 <span class="logo-g">G</span>
             </a>
-            
+
             <!-- Search Bar -->
             <form class="navbar-search" method="GET" action="{{ route('home') }}">
                 <i class="fas fa-search search-icon"></i>
-                <input type="text" class="search-input" name="search" placeholder="Search store" value="{{ request('search') }}">
+                <input type="text" class="search-input" name="search" placeholder="Search store"
+                    value="{{ request('search') }}">
             </form>
-            
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">Home</a>
+                        <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}#products">Browse</a>
+                        <a class="nav-link {{ request()->routeIs('browse') ? 'active' : '' }}" href="{{ route('browse') }}">Browse</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('sellers.index') }}">Sellers</a>
+                        <a class="nav-link {{ request()->routeIs('sellers.*') ? 'active' : '' }}" href="{{ route('sellers.index') }}">Sellers</a>
                     </li>
                     @auth
                         <li class="nav-item">
@@ -3122,71 +4023,77 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('orders.index') }}">Orders</a>
                         </li>
-                        @if(auth()->user()->isAdminOrSeller())
+                        @if (auth()->user()->isAdminOrSeller())
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.dashboard') }}">Dashboard</a>
                             </li>
                         @endif
                     @endauth
                 </ul>
-                
+
                 <ul class="navbar-nav">
                     @auth
                         <li class="nav-item me-4">
-                            <a class="nav-link position-relative" href="{{ route('notifications.index') }}" id="notificationBell">
+                            <a class="nav-link position-relative" href="{{ route('notifications.index') }}"
+                                id="notificationBell">
                                 <i class="fas fa-bell"></i>
-                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="notificationBadge" style="display: none;">
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                    id="notificationBadge" style="display: none;">
                                     0
                                 </span>
                             </a>
                         </li>
-                        @if(auth()->user()->isUser() || auth()->user()->isAdmin())
-                        <li class="nav-item me-4">
-                            <span class="wallet-balance">
-                                <i class="fas fa-coins me-1"></i>
-                                Rp {{ number_format(auth()->user()->wallet_balance, 0, ',', '.') }}
-                            </span>
-                        </li>
-                        @endif
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
-                            @if(auth()->user()->profile_photo)
-                                <img src="{{ asset('storage/' . auth()->user()->profile_photo) }}" 
-                                     alt="Profile" 
-                                     class="rounded-circle me-2" 
-                                     style="width: 24px; height: 24px; object-fit: cover;">
-                            @else
-                                <i class="fas fa-user me-1"></i>
-                            @endif
-                            {{ auth()->user()->name }}
-                        </a>
-                        <ul class="dropdown-menu">
-                            @if(auth()->user()->isUser())
-                                <li><a class="dropdown-item" href="{{ route('profile.index') }}">My Profile</a></li>
-                                <li><a class="dropdown-item" href="{{ route('wallet.index') }}">My Wallet</a></li>
-                                <li><a class="dropdown-item" href="{{ route('orders.index') }}">My Orders</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                            @endif
-                            @if(auth()->user()->isAdminOrSeller())
-                                <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                                <li><a class="dropdown-item" href="{{ route('admin.profile') }}">Profile</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                            @endif
-                            <li>
-                                <form action="{{ route('logout') }}" method="POST" class="d-inline">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item">Logout</button>
-                                </form>
+                        @if (auth()->user()->isUser() || auth()->user()->isAdmin())
+                            <li class="nav-item me-4">
+                                <span class="wallet-balance">
+                                    <i class="fas fa-coins me-1"></i>
+                                    Rp {{ number_format(auth()->user()->wallet_balance, 0, ',', '.') }}
+                                </span>
                             </li>
-                        </ul>
-                    </li>
+                        @endif
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+                                data-bs-toggle="dropdown">
+                                @if (auth()->user()->profile_photo)
+                                    <img src="{{ asset('storage/' . auth()->user()->profile_photo) }}" alt="Profile"
+                                        class="rounded-circle me-2" style="width: 24px; height: 24px; object-fit: cover;">
+                                @else
+                                    <i class="fas fa-user me-1"></i>
+                                @endif
+                                {{ auth()->user()->name }}
+                            </a>
+                            <ul class="dropdown-menu">
+                                @if (auth()->user()->isUser())
+                                    <li><a class="dropdown-item" href="{{ route('profile.index') }}">My Profile</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('wallet.index') }}">My Wallet</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('orders.index') }}">My Orders</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                @endif
+                                @if (auth()->user()->isAdminOrSeller())
+                                    <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('admin.profile') }}">Profile</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                @endif
+                                <li>
+                                    <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item">Logout</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
                     @else
-                    <li class="nav-item">
-                        <a class="btn btn-login" href="{{ route('login') }}">Log in</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-register" href="{{ route('register') }}">Register</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="btn btn-login" href="{{ route('login') }}">Log in</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-register" href="{{ route('register') }}">Register</a>
+                        </li>
                     @endauth
                 </ul>
             </div>
@@ -3194,23 +4101,23 @@
     </nav>
 
     <div class="main-content" id="mainContent">
-    <main class="container mt-4">
-        @if(session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('success') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-        @endif
+        <main class="container mt-4">
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            @endif
 
-        @if(session('error'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{ session('error') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-        @endif
+            @if (session('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            @endif
 
-        @yield('content')
-    </main>
+            @yield('content')
+        </main>
     </div>
 
     <footer class="footer">
@@ -3220,7 +4127,8 @@
                     <h5 class="mb-3">
                         <i class="fas fa-gamepad me-2"></i>JajanGaming
                     </h5>
-                    <p class="mb-3">Platform terpercaya untuk top up Robux Roblox dengan harga terbaik dan proses cepat.</p>
+                    <p class="mb-3">Platform terpercaya untuk top up Robux Roblox dengan harga terbaik dan proses
+                        cepat.</p>
                     <div class="d-flex gap-3">
                         <a href="#" class="text-white"><i class="fab fa-facebook fa-lg"></i></a>
                         <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
@@ -3232,8 +4140,10 @@
                     <h6 class="mb-3">Quick Links</h6>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('home') }}" class="text-white-50 text-decoration-none">Home</a></li>
-                        <li><a href="{{ route('wallet.index') }}" class="text-white-50 text-decoration-none">Wallet</a></li>
-                        <li><a href="{{ route('orders.index') }}" class="text-white-50 text-decoration-none">Orders</a></li>
+                        <li><a href="{{ route('wallet.index') }}"
+                                class="text-white-50 text-decoration-none">Wallet</a></li>
+                        <li><a href="{{ route('orders.index') }}"
+                                class="text-white-50 text-decoration-none">Orders</a></li>
                         <li><a href="#" class="text-white-50 text-decoration-none">Support</a></li>
                     </ul>
                 </div>
@@ -3253,14 +4163,15 @@
                     <p class="mb-0 text-white-50">&copy; 2024 JajanGaming. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <small class="text-white-50">Made with <i class="fas fa-heart text-danger"></i> for Roblox players</small>
+                    <small class="text-white-50">Made with <i class="fas fa-heart text-danger"></i> for Roblox
+                        players</small>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script>
         // Sticky Navbar Effect
         window.addEventListener('scroll', function() {
@@ -3274,7 +4185,7 @@
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -3290,13 +4201,13 @@
         function setActiveNavLink() {
             const currentPath = window.location.pathname;
             const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-            
+
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 const linkPath = new URL(link.href).pathname;
-                
+
                 // Check if current path matches link path
-                if (currentPath === linkPath || 
+                if (currentPath === linkPath ||
                     (currentPath === '/' && linkPath === '/') ||
                     (currentPath.startsWith(linkPath) && linkPath !== '/')) {
                     link.classList.add('active');
@@ -3321,10 +4232,10 @@
                 document.querySelectorAll('.navbar-nav .nav-link').forEach(l => {
                     l.classList.remove('active');
                 });
-                
+
                 // Add active class to clicked link
                 this.classList.add('active');
-                
+
                 // Close mobile menu if open
                 const navbarCollapse = document.querySelector('.navbar-collapse');
                 if (navbarCollapse.classList.contains('show')) {
@@ -3335,40 +4246,40 @@
                 }
             });
         });
-        
+
         // Test function to check if JavaScript is working
         function testClick() {
             alert('Card clicked! JavaScript is working.');
         }
-        
+
         // Add to cart function
         function addToCart(productId) {
             try {
                 console.log('addToCart called with productId:', productId);
-                
+
                 // Check if user is authenticated by checking for auth elements
                 const isAuthenticated = document.querySelector('.wallet-balance') !== null;
                 console.log('User authenticated:', isAuthenticated);
-                
+
                 if (!isAuthenticated) {
                     console.log('User not authenticated, redirecting to login');
-                    window.location.href = '{{ route("login") }}';
+                    window.location.href = '{{ route('login') }}';
                     return;
                 }
-                
+
                 // Get product info for modal
                 const productCard = document.querySelector(`[onclick="addToCart(${productId})"]`);
                 const productName = productCard.querySelector('.card-title')?.textContent || 'Produk';
                 const productPrice = productCard.querySelector('.price-display')?.textContent || 'Rp 0';
-                
+
                 // Get current quantity from the product card
                 const quantityInput = document.getElementById(`quantity-${productId}`);
                 const currentQuantity = quantityInput ? parseInt(quantityInput.value) || 1 : 1;
                 console.log('Current quantity from product card:', currentQuantity);
-                
+
                 // Show confirmation modal
                 showAddToCartModal(productId, productName, productPrice, currentQuantity);
-                
+
             } catch (error) {
                 console.error('Unexpected error:', error);
                 showNotification('Terjadi kesalahan tidak terduga: ' + error.message, 'error');
@@ -3378,7 +4289,7 @@
         // Show add to cart confirmation modal
         function showAddToCartModal(productId, productName, productPrice, quantity = 1) {
             console.log('showAddToCartModal called with quantity:', quantity);
-            
+
             // Create modal HTML
             const modalHtml = `
                 <div class="modal fade" id="addToCartModal" tabindex="-1" aria-labelledby="addToCartModalLabel" aria-hidden="true">
@@ -3428,16 +4339,16 @@
                     </div>
                 </div>
             `;
-            
+
             // Remove existing modal if any
             const existingModal = document.getElementById('addToCartModal');
             if (existingModal) {
                 existingModal.remove();
             }
-            
+
             // Add modal to body
             document.body.insertAdjacentHTML('beforeend', modalHtml);
-            
+
             // Show modal
             const modal = new bootstrap.Modal(document.getElementById('addToCartModal'));
             modal.show();
@@ -3448,10 +4359,10 @@
             try {
                 const quantity = document.getElementById('modalQuantity')?.value || 1;
                 console.log('Confirming add to cart - ProductId:', productId, 'Quantity:', quantity);
-                
+
                 // Sync quantity back to product card
                 syncQuantityWithProductCard(productId, quantity);
-                
+
                 // Create form data
                 const formData = new FormData();
                 const csrfToken = document.querySelector('meta[name="csrf-token"]');
@@ -3460,74 +4371,75 @@
                     showNotification('CSRF token tidak ditemukan', 'error');
                     return;
                 }
-                
+
                 const token = csrfToken.getAttribute('content');
                 console.log('Using CSRF token:', token);
-                
+
                 formData.append('_token', token);
                 formData.append('product_id', productId);
                 formData.append('quantity', quantity);
-                
+
                 console.log('FormData created, sending request...');
-                
+
                 // Hide modal
                 const modal = bootstrap.Modal.getInstance(document.getElementById('addToCartModal'));
                 modal.hide();
-                
+
                 // Show loading notification
                 showNotification('Menambahkan ke keranjang...', 'info');
-                
+
                 // Send AJAX request
-                fetch('{{ route("cart.add") }}', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest',
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                    }
-                })
-                .then(response => {
-                    console.log('Response received:', response);
-                    if (!response.ok) {
-                        // Get response text for better error details
-                        return response.text().then(text => {
-                            console.error('Error response:', text);
-                            throw new Error(`HTTP error! status: ${response.status} - ${text}`);
-                        });
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Data received:', data);
-                    if (data.success) {
-                        // Show success message
-                        showNotification('Produk berhasil ditambahkan ke keranjang!', 'success');
-                        
-                        // Update cart count immediately
-                        updateCartCount();
-                        
-                        // Redirect to cart after a short delay
-                        setTimeout(() => {
-                            window.location.href = '{{ route("cart.index") }}';
-                        }, 1500);
-                    } else {
-                        showNotification(data.message || 'Terjadi kesalahan', 'error');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    
-                    // Check if it's a CSRF token mismatch error
-                    if (error.message.includes('419')) {
-                        showNotification('Session expired. Please refresh the page and try again.', 'error');
-                        // Optionally refresh the page
-                        setTimeout(() => {
-                            window.location.reload();
-                        }, 2000);
-                    } else {
-                        showNotification('Terjadi kesalahan saat menambahkan ke keranjang: ' + error.message, 'error');
-                    }
-                });
+                fetch('{{ route('cart.add') }}', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                        }
+                    })
+                    .then(response => {
+                        console.log('Response received:', response);
+                        if (!response.ok) {
+                            // Get response text for better error details
+                            return response.text().then(text => {
+                                console.error('Error response:', text);
+                                throw new Error(`HTTP error! status: ${response.status} - ${text}`);
+                            });
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Data received:', data);
+                        if (data.success) {
+                            // Show success message
+                            showNotification('Produk berhasil ditambahkan ke keranjang!', 'success');
+
+                            // Update cart count immediately
+                            updateCartCount();
+
+                            // Redirect to cart after a short delay
+                            setTimeout(() => {
+                                window.location.href = '{{ route('cart.index') }}';
+                            }, 1500);
+                        } else {
+                            showNotification(data.message || 'Terjadi kesalahan', 'error');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+
+                        // Check if it's a CSRF token mismatch error
+                        if (error.message.includes('419')) {
+                            showNotification('Session expired. Please refresh the page and try again.', 'error');
+                            // Optionally refresh the page
+                            setTimeout(() => {
+                                window.location.reload();
+                            }, 2000);
+                        } else {
+                            showNotification('Terjadi kesalahan saat menambahkan ke keranjang: ' + error.message,
+                                'error');
+                        }
+                    });
             } catch (error) {
                 console.error('Unexpected error:', error);
                 showNotification('Terjadi kesalahan tidak terduga: ' + error.message, 'error');
@@ -3538,16 +4450,17 @@
         function showNotification(message, type = 'info') {
             // Create notification element
             const notification = document.createElement('div');
-            notification.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show position-fixed`;
+            notification.className =
+                `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show position-fixed`;
             notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
             notification.innerHTML = `
                 ${message}
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             `;
-            
+
             // Add to body
             document.body.appendChild(notification);
-            
+
             // Auto remove after 3 seconds
             setTimeout(() => {
                 if (notification.parentNode) {
@@ -3560,18 +4473,18 @@
         function initHeroSlider() {
             const slides = document.querySelectorAll('.hero-slide');
             let currentSlide = 0;
-            
+
             function showSlide(index) {
                 slides.forEach((slide, i) => {
                     slide.classList.toggle('active', i === index);
                 });
             }
-            
+
             function nextSlide() {
                 currentSlide = (currentSlide + 1) % slides.length;
                 showSlide(currentSlide);
             }
-            
+
             // Auto slide every 4 seconds
             setInterval(nextSlide, 4000);
         }
@@ -3597,54 +4510,54 @@
         // Update cart count
         function updateCartCount() {
             @auth
-                fetch('/api/cart/count')
-                    .then(response => response.json())
-                    .then(data => {
-                        const sidebarBadge = document.getElementById('sidebarCartBadge');
-                        const navbarBadge = document.getElementById('navbarCartBadge');
-                        
-                        if (data.count > 0) {
-                            sidebarBadge.textContent = data.count;
-                            sidebarBadge.style.display = 'block';
-                            navbarBadge.textContent = data.count;
-                            navbarBadge.style.display = 'block';
-                        } else {
-                            sidebarBadge.style.display = 'none';
-                            navbarBadge.style.display = 'none';
-                        }
-                    })
-                    .catch(error => console.log('Error fetching cart count:', error));
-            @endauth
+            fetch('/api/cart/count')
+                .then(response => response.json())
+                .then(data => {
+                    const sidebarBadge = document.getElementById('sidebarCartBadge');
+                    const navbarBadge = document.getElementById('navbarCartBadge');
+
+                    if (data.count > 0) {
+                        sidebarBadge.textContent = data.count;
+                        sidebarBadge.style.display = 'block';
+                        navbarBadge.textContent = data.count;
+                        navbarBadge.style.display = 'block';
+                    } else {
+                        sidebarBadge.style.display = 'none';
+                        navbarBadge.style.display = 'none';
+                    }
+                })
+                .catch(error => console.log('Error fetching cart count:', error));
+        @endauth
         }
 
         // Update notification count
         function updateNotificationCount() {
             @auth
-                fetch('{{ route("notifications.unread-count") }}')
-                    .then(response => response.json())
-                    .then(data => {
-                        const navbarBadge = document.getElementById('notificationBadge');
-                        const sidebarBadge = document.getElementById('sidebarNotificationBadge');
-                        
-                        if (data.count > 0) {
-                            navbarBadge.textContent = data.count;
-                            navbarBadge.style.display = 'block';
-                            sidebarBadge.textContent = data.count;
-                            sidebarBadge.style.display = 'block';
-                            
-                            // Add shake animation to bell
-                            const bell = document.getElementById('notificationBell');
-                            bell.style.animation = 'shake 0.5s ease-in-out';
-                            setTimeout(() => {
-                                bell.style.animation = '';
-                            }, 500);
-                        } else {
-                            navbarBadge.style.display = 'none';
-                            sidebarBadge.style.display = 'none';
-                        }
-                    })
-                    .catch(error => console.log('Error fetching notification count:', error));
-            @endauth
+            fetch('{{ route('notifications.unread-count') }}')
+                .then(response => response.json())
+                .then(data => {
+                    const navbarBadge = document.getElementById('notificationBadge');
+                    const sidebarBadge = document.getElementById('sidebarNotificationBadge');
+
+                    if (data.count > 0) {
+                        navbarBadge.textContent = data.count;
+                        navbarBadge.style.display = 'block';
+                        sidebarBadge.textContent = data.count;
+                        sidebarBadge.style.display = 'block';
+
+                        // Add shake animation to bell
+                        const bell = document.getElementById('notificationBell');
+                        bell.style.animation = 'shake 0.5s ease-in-out';
+                        setTimeout(() => {
+                            bell.style.animation = '';
+                        }, 500);
+                    } else {
+                        navbarBadge.style.display = 'none';
+                        sidebarBadge.style.display = 'none';
+                    }
+                })
+                .catch(error => console.log('Error fetching notification count:', error));
+        @endauth
         }
 
         // Shake animation for notification bell
@@ -3655,7 +4568,7 @@
                 75% { transform: translateX(5px); }
             }
         `;
-        
+
         const style = document.createElement('style');
         style.textContent = shakeKeyframes;
         document.head.appendChild(style);
@@ -3666,17 +4579,17 @@
             const sidebarToggle = document.getElementById('sidebarToggle');
             const sidebarOverlay = document.getElementById('sidebarOverlay');
             const mainContent = document.getElementById('mainContent');
-            
+
             // Toggle sidebar
             sidebarToggle.addEventListener('click', function() {
                 toggleSidebar();
             });
-            
+
             // Close sidebar when clicking overlay
             sidebarOverlay.addEventListener('click', function() {
                 closeSidebar();
             });
-            
+
             // Close sidebar when clicking sidebar links on mobile
             const sidebarLinks = document.querySelectorAll('.sidebar-nav .nav-link');
             sidebarLinks.forEach(link => {
@@ -3686,14 +4599,14 @@
                     }
                 });
             });
-            
+
             // Close sidebar on escape key
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape' && sidebar.classList.contains('show')) {
                     closeSidebar();
                 }
             });
-            
+
             // Handle window resize
             window.addEventListener('resize', function() {
                 if (window.innerWidth > 768) {
@@ -3704,45 +4617,45 @@
                     closeSidebar();
                 }
             });
-            
+
             // Set active sidebar link
             setActiveSidebarLink();
         }
-        
+
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const sidebarOverlay = document.getElementById('sidebarOverlay');
             const mainContent = document.getElementById('mainContent');
-            
+
             sidebar.classList.toggle('show');
             sidebarOverlay.classList.toggle('show');
-            
+
             // On desktop, adjust main content
             if (window.innerWidth > 768) {
                 mainContent.classList.toggle('sidebar-open');
             }
         }
-        
+
         function closeSidebar() {
             const sidebar = document.getElementById('sidebar');
             const sidebarOverlay = document.getElementById('sidebarOverlay');
             const mainContent = document.getElementById('mainContent');
-            
+
             sidebar.classList.remove('show');
             sidebarOverlay.classList.remove('show');
             mainContent.classList.remove('sidebar-open');
         }
-        
+
         function setActiveSidebarLink() {
             const currentPath = window.location.pathname;
             const sidebarLinks = document.querySelectorAll('.sidebar-nav .nav-link');
-            
+
             sidebarLinks.forEach(link => {
                 link.classList.remove('active');
                 const linkPath = new URL(link.href).pathname;
-                
+
                 // Check if current path matches link path
-                if (currentPath === linkPath || 
+                if (currentPath === linkPath ||
                     (currentPath === '/' && linkPath === '/') ||
                     (currentPath.startsWith(linkPath) && linkPath !== '/')) {
                     link.classList.add('active');
@@ -3760,7 +4673,7 @@
             const currentValue = parseInt(input.value) || 1;
             input.value = currentValue + 1;
             console.log('Modal quantity increased to:', input.value);
-            
+
             // Add visual feedback
             const btn = event.target.closest('.quantity-btn');
             if (btn) {
@@ -3779,11 +4692,11 @@
             }
             const currentValue = parseInt(input.value) || 1;
             const minValue = parseInt(input.min) || 1;
-            
+
             if (currentValue > minValue) {
                 input.value = currentValue - 1;
                 console.log('Modal quantity decreased to:', input.value);
-                
+
                 // Add visual feedback
                 const btn = event.target.closest('.quantity-btn');
                 if (btn) {
@@ -3804,7 +4717,8 @@
             }
         }
     </script>
-    
+
     @yield('scripts')
 </body>
+
 </html>
