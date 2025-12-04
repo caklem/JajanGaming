@@ -28,22 +28,54 @@
             <!-- Left Content -->
             <div class="col-lg-6 hero-content-left">
                 <h1 class="hero-title">
-                    THE LAST OF US PART II
+                    <i class="fas fa-hand-wave me-2"></i>Selamat Datang di Marketplace Robux Terpercaya
                 </h1>
                 <p class="hero-description">
-                    Five years after the events of The Last of Us, Ellie embarks on another journey through a post-apocalyptic America on a mission of vengeance against a mysterious militia.
+                    Kami memudahkan kamu menemukan reseller Robux yang aman, cepat, dan berharga terbaik. Semua reseller melalui proses verifikasi dan rating dari pengguna.
                 </p>
+                <div class="hero-stats mt-4">
+                    <div class="stat-item">
+                        <i class="fas fa-clock me-2"></i>
+                        <span>Update harga Robux real-time</span>
+                    </div>
+                    <div class="stat-item mt-2">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <span>Ribuan transaksi berhasil setiap hari</span>
+                    </div>
+                </div>
             </div>
             
             <!-- Right Content -->
             <div class="col-lg-6 hero-content-right">
-                <div class="hero-price">$49.99</div>
-                <div class="hero-buttons d-flex flex-column gap-3">
-                    <a href="#products" class="btn btn-hero-buy">
-                        Buy Now
-                    </a>
-                    <a href="#" class="btn btn-hero-wishlist">
-                        Add to Wishlist
+                <!-- Robux Calculator -->
+                <div class="robux-calculator">
+                    <h3 class="calculator-title">
+                        <i class="fas fa-calculator me-2"></i>Kalkulator Robux
+                    </h3>
+                    <p class="calculator-subtitle">Hitung cepat: "Saya mau beli berapa Robux?"</p>
+                    
+                    <div class="calculator-input-group">
+                        <label for="robuxAmount" class="calculator-label">Masukkan jumlah Robux:</label>
+                        <input type="number" 
+                               id="robuxAmount" 
+                               class="calculator-input" 
+                               placeholder="Contoh: 1000"
+                               min="1"
+                               oninput="calculateRobuxPrice()">
+                    </div>
+                    
+                    <div class="calculator-result" id="calculatorResult" style="display: none;">
+                        <div class="result-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="result-text">
+                            <span class="result-label">Perkiraan harga termurah:</span>
+                            <span class="result-price" id="estimatedPrice">Rp 0</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#products" class="btn btn-calculator-search">
+                        <i class="fas fa-search me-2"></i>Cari Reseller Termurah
                     </a>
                 </div>
             </div>
@@ -326,6 +358,7 @@
 </div>
 @endsection
 
+@section('scripts')
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Prevent card click when clicking seller link
@@ -367,6 +400,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Initialize hero slider for home page - OUTSIDE DOMContentLoaded
+console.log('🚀 Home page script loaded');
+console.log('🔍 Checking for initHeroSlider function...');
+
+if (typeof initHeroSlider === 'function') {
+    console.log('✅ initHeroSlider found, calling it now...');
+    initHeroSlider();
+} else {
+    console.warn('❌ initHeroSlider not found!');
+    
+    // Try again after a short delay
+    setTimeout(() => {
+        if (typeof initHeroSlider === 'function') {
+            console.log('✅ initHeroSlider found on retry, calling it now...');
+            initHeroSlider();
+        } else {
+            console.error('❌ initHeroSlider still not found after delay');
+        }
+    }, 200);
+}
+
+
 // Quantity control functions
 function increaseQuantity(productId) {
     const input = document.getElementById(`quantity-${productId}`);
@@ -398,26 +453,53 @@ function decreaseQuantity(productId) {
     }
 }
 
-// Hero Carousel Functions
-let currentHeroSlide = 0;
-const heroSlides = document.querySelectorAll('.hero-slide');
-const totalHeroSlides = heroSlides.length;
-
-function changeHeroSlide(direction) {
-    heroSlides[currentHeroSlide].classList.remove('active');
-    currentHeroSlide += direction;
+// Robux Calculator Function
+function calculateRobuxPrice() {
+    const robuxAmount = document.getElementById('robuxAmount').value;
+    const resultDiv = document.getElementById('calculatorResult');
+    const priceSpan = document.getElementById('estimatedPrice');
     
-    if (currentHeroSlide >= totalHeroSlides) {
-        currentHeroSlide = 0;
-    } else if (currentHeroSlide < 0) {
-        currentHeroSlide = totalHeroSlides - 1;
+    if (!robuxAmount || robuxAmount <= 0) {
+        resultDiv.style.display = 'none';
+        return;
     }
     
-    heroSlides[currentHeroSlide].classList.add('active');
+    // Asumsi harga: Rp 35 per 400 Robux (sesuai data produk Anda)
+    // Jadi 1 Robux ≈ Rp 87.5
+    const pricePerRobux = 87.5;
+    const estimatedPrice = Math.ceil(robuxAmount * pricePerRobux);
+    
+    // Format harga dengan separator ribuan
+    const formattedPrice = new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    }).format(estimatedPrice);
+    
+    priceSpan.textContent = formattedPrice;
+    resultDiv.style.display = 'flex';
+    
+    // Add animation
+    resultDiv.style.animation = 'none';
+    setTimeout(() => {
+        resultDiv.style.animation = 'fadeInUp 0.5s ease-out';
+    }, 10);
 }
 
-// Auto-play carousel
-setInterval(() => {
-    changeHeroSlide(1);
-}, 5000);
+// Add fadeInUp animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(style);
 </script>

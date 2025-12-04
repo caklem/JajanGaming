@@ -54,57 +54,6 @@
             width: 100%;
         }
         
-        .navbar::after {
-            content: '';
-            position: absolute !important;
-            bottom: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            width: 100% !important;
-            height: 40px !important;
-            background: linear-gradient(to bottom, 
-                rgba(26, 26, 46, 0.98) 0%,
-                rgba(26, 26, 46, 0.95) 15%,
-                rgba(26, 26, 46, 0.88) 30%,
-                rgba(26, 26, 46, 0.75) 45%,
-                rgba(26, 26, 46, 0.6) 60%,
-                rgba(26, 26, 46, 0.4) 75%,
-                rgba(26, 26, 46, 0.2) 85%,
-                transparent 100%);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            pointer-events: none !important;
-            z-index: 1001 !important;
-            display: block !important;
-        }
-        
-        .navbar::before {
-            content: '';
-            position: absolute !important;
-            bottom: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            width: 100% !important;
-            height: 1px !important;
-            background: linear-gradient(to right, 
-                transparent 0%, 
-                transparent 15%,
-                rgba(0, 212, 255, 0.2) 25%,
-                rgba(0, 212, 255, 0.4) 35%,
-                rgba(0, 212, 255, 0.6) 42%,
-                rgba(0, 212, 255, 0.75) 47%,
-                rgba(0, 212, 255, 0.9) 50%,
-                rgba(0, 212, 255, 0.75) 53%,
-                rgba(0, 212, 255, 0.6) 58%,
-                rgba(0, 212, 255, 0.4) 65%,
-                rgba(0, 212, 255, 0.2) 75%,
-                transparent 85%,
-                transparent 100%) !important;
-            pointer-events: none !important;
-            z-index: 1002 !important;
-            display: block !important;
-        }
-        
         .navbar.scrolled {
             background: #1a1a2e !important;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -1255,28 +1204,28 @@
             color: var(--text-color);
         }
 
-        /* Hero Section - Only affects hero section, not header/navbar */
+        /* ===================================================================
+           HERO SECTION
+        =================================================================== */
         .hero-section {
-            background: linear-gradient(135deg, 
-                #0a0a0a 0%, 
-                #1a1a2e 20%, 
-                #16213e 40%, 
-                #0f3460 60%, 
-                #00d4aa 80%, 
-                #00b894 100%);
-            color: white;
-            padding: 0;
-            margin-bottom: 2rem;
-            border-radius: 0 0 32px 32px;
             position: relative;
-            overflow: hidden;
             min-height: 100vh;
             display: flex;
             align-items: center;
+            color: white;
+            padding: 0;
+            margin-bottom: 0;
+            overflow: visible;
+            border-radius: 0;
+            background: #0a0a0a;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.6),
+                0 50px 10
+                0px rgba(0, 0, 0, 0.5);
         }
         
         .main-content .container .hero-section {
-            margin-top: 0 !important;
+            margin-top: -200px !important;
             margin-bottom: 0 !important;
             margin-left: calc(-50vw + 50%) !important;
             margin-right: calc(-50vw + 50%) !important;
@@ -1297,225 +1246,212 @@
             margin-top: 0 !important;
         }
 
-        /* Hero Slider */
+        /* ===================================================================
+           BACKGROUND SLIDER (YANG DIBUAT BLUR)
+        =================================================================== */
         .hero-slider {
             position: absolute;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
             z-index: 1;
-        }
-        
-        /* Blur Gradient Overlay - Top & Bottom */
-        .hero-slider::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 150px;
-            background: linear-gradient(to bottom, 
-                var(--bg-light) 0%, 
-                rgba(248, 249, 250, 0.95) 20%,
-                rgba(248, 249, 250, 0.7) 50%,
-                transparent 100%);
-            z-index: 10;
-            pointer-events: none;
-        }
-        
-        .hero-slider::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 150px;
-            background: linear-gradient(to top, 
-                var(--bg-light) 0%, 
-                rgba(248, 249, 250, 0.95) 20%,
-                rgba(248, 249, 250, 0.7) 50%,
-                transparent 100%);
-            z-index: 10;
-            pointer-events: none;
-        }
-        
-        /* Blur effect on top of hero section - menyatu dengan header */
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 18%;
-            background: linear-gradient(to bottom, 
-                rgba(26, 26, 46, 0.98) 0%,
-                rgba(26, 26, 46, 0.95) 8%,
-                rgba(26, 26, 46, 0.88) 15%,
-                rgba(26, 26, 46, 0.75) 25%,
-                rgba(26, 26, 46, 0.6) 35%,
-                rgba(26, 26, 46, 0.45) 45%,
-                rgba(26, 26, 46, 0.3) 55%,
-                rgba(26, 26, 46, 0.18) 65%,
-                rgba(26, 26, 46, 0.1) 75%,
-                rgba(26, 26, 46, 0.05) 85%,
-                transparent 100%);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            z-index: 5;
-            pointer-events: none;
-        }
-        
-        /* Blur effect on bottom of hero section - gradasi halus menyatu dengan gambar */
-        .hero-section::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 20%;
-            background: linear-gradient(to top, 
-                rgba(15, 15, 30, 0.85) 0%,
-                rgba(15, 15, 30, 0.7) 10%,
-                rgba(15, 15, 30, 0.55) 20%,
-                rgba(15, 15, 30, 0.4) 30%,
-                rgba(15, 15, 30, 0.28) 40%,
-                rgba(15, 15, 30, 0.18) 50%,
-                rgba(15, 15, 30, 0.1) 60%,
-                rgba(15, 15, 30, 0.05) 70%,
-                rgba(15, 15, 30, 0.02) 80%,
-                transparent 90%,
-                transparent 100%);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            z-index: 5;
-            pointer-events: none;
-        }
-        
-        /* Dark Overlay for better text contrast - layer terpisah */
-        .hero-section .dark-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, 
-                rgba(0, 0, 0, 0.5) 0%, 
-                rgba(0, 0, 0, 0.3) 50%, 
-                rgba(0, 0, 0, 0.5) 100%);
-            pointer-events: none;
-            z-index: 3;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.5),
+                0 50px 100px rgba(0, 0, 0, 0.4),
+                inset 0 0 80px rgba(0, 0, 0, 0.3);
         }
 
         .hero-slide {
             position: absolute;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
+
             background-size: cover;
-            background-position: center center;
+            background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
+
             opacity: 0;
-            transition: opacity 1.5s ease-in-out;
+            visibility: hidden;
+            transition: opacity 1.5s ease-in-out, visibility 1.5s ease-in-out;
+            z-index: 1;
         }
 
         .hero-slide.active {
-            opacity: 0.85;
-        }
-        
-        /* Dark Overlay for better text contrast - menggunakan pseudo-element terpisah */
-        .hero-section {
-            position: relative;
-        }
-        
-        .hero-section .dark-overlay {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, 
-                rgba(0, 0, 0, 0.5) 0%, 
-                rgba(0, 0, 0, 0.3) 50%, 
-                rgba(0, 0, 0, 0.5) 100%);
-            pointer-events: none;
+            opacity: 1;
+            visibility: visible;
             z-index: 2;
         }
-        
-        /* Hero Navigation Arrows */
+
+        /* Gambar slides */
+        .hero-slide:nth-child(1) {
+            background-image: url('{{ asset("img/gambar 1.jpeg") }}');
+        }
+        .hero-slide:nth-child(2) {
+            background-image: url('{{ asset("img/roblox.jpg") }}');
+        }
+        .hero-slide:nth-child(3) {
+            background-image: url('{{ asset("img/gambar 3.jpg") }}');
+        }
+
+        /* ===================================================================
+           DARK OVERLAY (CINEMATIC SEPERTI CONTOH)
+        =================================================================== */
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.6) 0%,
+                rgba(0,0,0,0.3) 40%,
+                rgba(0,0,0,0.75) 100%
+            );
+        }
+
+        /* ===================================================================
+           BLUR GRADIENT - TOP & BOTTOM
+        =================================================================== */
+        .hero-slider::before,
+        .hero-slider::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        /* Top blur gradient - kuat di atas, memudar ke tengah */
+        .hero-slider::before {
+            top: 0;
+            height: 50%;
+            background: 
+                linear-gradient(
+                    to bottom,
+                    rgba(26, 26, 46, 0.95),
+                    rgba(26, 26, 46, 0.6),
+                    transparent
+                );
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(8px);
+            mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 100%);
+        }
+
+        /* Bottom blur gradient - kuat di bawah, memudar ke tengah */
+        .hero-slider::after {
+            bottom: 0;
+            height: 50%;
+            background: 
+                linear-gradient(
+                    to top,
+                    rgba(26, 26, 46, 0.95),
+                    rgba(26, 26, 46, 0.6),
+                    transparent
+                );
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            mask-image: linear-gradient(to top, black 0%, black 30%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to top, black 0%, black 30%, transparent 100%);
+        }
+
+        /* ===================================================================
+           NAVIGATION ARROWS
+        =================================================================== */
         .hero-nav {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: white;
             width: 50px;
             height: 50px;
             border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.3);
+            background: rgba(0,0,0,0.5);
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             z-index: 10;
-            transition: all 0.3s ease;
-            font-size: 1.2rem;
+            transition: 0.3s;
         }
-        
+
         .hero-nav:hover {
-            background: rgba(0, 0, 0, 0.8);
-            border-color: rgba(255, 255, 255, 0.8);
+            background: rgba(0,0,0,0.8);
+            border-color: rgba(255,255,255,0.8);
             transform: translateY(-50%) scale(1.1);
         }
-        
-        .hero-nav-prev {
-            left: 20px;
-        }
-        
-        .hero-nav-next {
-            right: 20px;
-        }
 
-        .hero-slide:nth-child(1) {
-            background-image: url('{{ asset("img/gambar 1.jpeg") }}');
-        }
+        .hero-nav-prev { left: 20px; }
+        .hero-nav-next { right: 20px; }
 
-        .hero-slide:nth-child(2) {
-            background-image: url('{{ asset("img/roblox.jpg") }}');
-        }
-
-        .hero-slide:nth-child(3) {
-            background-image: url('{{ asset("img/gambar 3.jpg") }}');
-        }
-
-        /* Hero Content Layout */
+        /* ===================================================================
+           HERO CONTENT
+        =================================================================== */
         .hero-section .container {
             position: relative;
             z-index: 5;
-            height: 100%;
-            width: 100%;
             max-width: 100%;
+            width: 100%;
+            padding: 2rem;
             display: flex;
             align-items: center;
-            padding-left: 2rem;
-            padding-right: 2rem;
         }
-        
+
         .hero-content-left {
-            position: relative;
-            z-index: 5;
+            color: white;
         }
         
+        .hero-stats {
+            margin-top: 1.5rem;
+        }
+        
+        .hero-stats .stat-item {
+            display: flex;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+        }
+        
+        .hero-stats .stat-item i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .hero-title .fa-hand-wave {
+            animation: wave 1s ease-in-out infinite;
+            transform-origin: 70% 70%;
+            display: inline-block;
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            10%, 30% { transform: rotate(14deg); }
+            20%, 40% { transform: rotate(-8deg); }
+            50% { transform: rotate(14deg); }
+            60% { transform: rotate(0deg); }
+        }
+        
+        .hero-content-left,
         .hero-content-right {
             position: relative;
             z-index: 5;
+        }
+        
+        .hero-content-left {
+            padding-left: 5rem;
+        }
+        
+        .hero-content-right {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
             justify-content: center;
+            padding-right: 5rem;
         }
 
         /* Animations */
@@ -1660,6 +1596,277 @@
             z-index: 5;
             width: 100%;
             max-width: 300px;
+        }
+
+        /* Robux Calculator Styling */
+        .robux-calculator {
+            background: linear-gradient(135deg, 
+                rgba(26, 26, 46, 0.98) 0%, 
+                rgba(42, 42, 62, 0.98) 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 
+                0 15px 50px rgba(0, 0, 0, 0.5),
+                0 5px 20px rgba(0, 212, 170, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            position: relative;
+            z-index: 5;
+            max-width: 400px;
+            width: 100%;
+            border: 2px solid rgba(0, 212, 170, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .robux-calculator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent 0%,
+                rgba(0, 212, 170, 0.5) 25%,
+                rgba(0, 212, 170, 0.8) 50%,
+                rgba(0, 212, 170, 0.5) 75%,
+                transparent 100%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .robux-calculator:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.6),
+                0 8px 30px rgba(0, 212, 170, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border-color: rgba(0, 212, 170, 0.6);
+        }
+
+        .calculator-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            text-shadow: 0 2px 10px rgba(0, 212, 170, 0.3);
+        }
+
+        .calculator-title i {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            filter: drop-shadow(0 0 10px rgba(0, 212, 170, 0.5));
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .calculator-subtitle {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .calculator-input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .calculator-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.3px;
+        }
+
+        .calculator-input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid rgba(0, 212, 170, 0.3);
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            background: rgba(42, 42, 62, 0.8);
+            box-shadow: 
+                inset 0 2px 8px rgba(0, 0, 0, 0.3),
+                0 0 0 0 rgba(0, 212, 170, 0);
+        }
+
+        .calculator-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: rgba(42, 42, 62, 0.95);
+            box-shadow: 
+                inset 0 2px 8px rgba(0, 0, 0, 0.3),
+                0 0 0 4px rgba(0, 212, 170, 0.15),
+                0 0 20px rgba(0, 212, 170, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .calculator-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 400;
+        }
+
+        .calculator-result {
+            background: linear-gradient(135deg, 
+                rgba(0, 212, 170, 0.15) 0%, 
+                rgba(0, 168, 204, 0.15) 100%);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 4px 15px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            border-left-width: 4px;
+        }
+
+        .calculator-result:hover {
+            transform: translateX(8px);
+            background: linear-gradient(135deg, 
+                rgba(0, 212, 170, 0.25) 0%, 
+                rgba(0, 168, 204, 0.25) 100%);
+            box-shadow: 
+                0 6px 20px rgba(0, 0, 0, 0.3),
+                0 0 30px rgba(0, 212, 170, 0.2);
+        }
+
+        .result-icon {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            filter: drop-shadow(0 0 10px rgba(0, 212, 170, 0.5));
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { 
+                transform: scale(1); 
+                opacity: 0.8; 
+                filter: drop-shadow(0 0 10px rgba(0, 212, 170, 0.5));
+            }
+            50% { 
+                transform: scale(1.15); 
+                opacity: 1; 
+                filter: drop-shadow(0 0 20px rgba(0, 212, 170, 0.8));
+            }
+        }
+
+        .result-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .result-price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+            text-shadow: 0 0 20px rgba(0, 212, 170, 0.4);
+        }
+
+        .btn-calculator-search {
+            width: 100%;
+            background: linear-gradient(135deg, 
+                rgba(0, 212, 170, 1) 0%, 
+                rgba(0, 168, 204, 1) 100%);
+            border: 2px solid rgba(0, 212, 170, 0.3);
+            color: #ffffff;
+            border-radius: 12px;
+            padding: 15px 28px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 6px 20px rgba(0, 212, 170, 0.4),
+                0 2px 8px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+
+        .btn-calculator-search::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.25), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-calculator-search::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 10px;
+            padding: 2px;
+            background: linear-gradient(135deg, 
+                rgba(0, 212, 170, 0.5), 
+                rgba(0, 168, 204, 0.5));
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-calculator-search:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 10px 35px rgba(0, 212, 170, 0.5),
+                0 4px 15px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            border-color: rgba(0, 212, 170, 0.6);
+        }
+
+        .btn-calculator-search:hover::before {
+            left: 100%;
+        }
+
+        .btn-calculator-search:hover::after {
+            opacity: 1;
+        }
+
+        .btn-calculator-search:active {
+            transform: translateY(-1px);
+            box-shadow: 
+                0 6px 20px rgba(0, 212, 170, 0.4),
+                0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Hero image styling removed - now using background image */
@@ -2011,8 +2218,118 @@
             left: 100%;
         }
 
+        /* Extra Large Screens (1400px+) */
+        @media (min-width: 1400px) {
+            .hero-content-left {
+                padding-left: 6rem;
+            }
+            
+            .hero-content-right {
+                padding-right: 6rem;
+            }
+            
+            .hero-title {
+                font-size: 5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.2rem;
+            }
+            
+            .hero-price {
+                font-size: 3rem;
+            }
+            
+            .btn-hero-buy,
+            .btn-hero-wishlist {
+                padding: 18px 52px;
+                font-size: 1.2rem;
+            }
+            
+            .hero-section .hero-buttons {
+                max-width: 350px;
+            }
+            
+            .robux-calculator {
+                max-width: 450px;
+                padding: 2.5rem;
+            }
+            
+            .calculator-title {
+                font-size: 1.7rem;
+            }
+            
+            .calculator-subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        /* Large Screens (1200px - 1399px) */
+        @media (max-width: 1399px) and (min-width: 1200px) {
+            .hero-content-left {
+                padding-left: 5rem;
+            }
+            
+            .hero-content-right {
+                padding-right: 5rem;
+            }
+            
+            .hero-title {
+                font-size: 4.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .hero-price {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Medium Large Screens (1024px - 1199px) */
+        @media (max-width: 1199px) and (min-width: 1025px) {
+            .hero-content-left {
+                padding-left: 4rem;
+            }
+            
+            .hero-content-right {
+                padding-right: 4rem;
+            }
+            
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .hero-price {
+                font-size: 2.2rem;
+            }
+            
+            .btn-hero-buy,
+            .btn-hero-wishlist {
+                padding: 15px 42px;
+                font-size: 1.05rem;
+            }
+            
+            .hero-section .hero-buttons {
+                max-width: 280px;
+            }
+        }
+
         /* Tablet Responsive (768px - 1024px) */
         @media (max-width: 1024px) and (min-width: 769px) {
+            .hero-content-left {
+                padding-left: 3rem;
+            }
+            
+            .hero-content-right {
+                padding-right: 3rem;
+            }
+            
             .hero-title {
                 font-size: 3rem;
             }
@@ -2096,14 +2413,45 @@
                 padding: 0;
             }
             
-            .hero-content-left,
-            .hero-content-right {
+            .hero-content-left {
                 text-align: center;
                 margin-bottom: 2rem;
+                padding-left: 1rem;
             }
             
             .hero-content-right {
+                text-align: center;
+                margin-bottom: 2rem;
                 align-items: center;
+                padding-right: 1rem;
+            }
+            
+            .robux-calculator {
+                max-width: 100%;
+                padding: 1.5rem;
+                margin: 0 auto;
+            }
+            
+            .calculator-title {
+                font-size: 1.3rem;
+            }
+            
+            .calculator-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .calculator-input {
+                padding: 10px 14px;
+                font-size: 0.95rem;
+            }
+            
+            .result-price {
+                font-size: 1.3rem;
+            }
+            
+            .btn-calculator-search {
+                padding: 12px 20px;
+                font-size: 0.95rem;
             }
             
             .hero-title {
@@ -2143,6 +2491,34 @@
             
             .hero-nav-next {
                 right: 10px;
+            }
+            
+            .robux-calculator {
+                max-width: 100%;
+                padding: 1.5rem;
+                margin: 0 auto;
+            }
+            
+            .calculator-title {
+                font-size: 1.3rem;
+            }
+            
+            .calculator-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .calculator-input {
+                padding: 10px 14px;
+                font-size: 0.95rem;
+            }
+            
+            .result-price {
+                font-size: 1.3rem;
+            }
+            
+            .btn-calculator-search {
+                padding: 12px 20px;
+                font-size: 0.95rem;
             }
             
             .wallet-balance {
@@ -2242,8 +2618,54 @@
             }
         }
 
+        /* Small Tablet (576px - 768px) */
+        @media (max-width: 768px) and (min-width: 577px) {
+            .hero-content-left {
+                padding-left: 1.5rem;
+            }
+            
+            .hero-content-right {
+                padding-right: 1.5rem;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .hero-price {
+                font-size: 2.2rem;
+            }
+            
+            .btn-hero-buy,
+            .btn-hero-wishlist {
+                padding: 15px 36px;
+                font-size: 1.05rem;
+            }
+            
+            .hero-section .hero-buttons {
+                max-width: 280px;
+            }
+            
+            .robux-calculator {
+                max-width: 350px;
+                padding: 1.75rem;
+            }
+        }
+
         /* Small Mobile Responsive (max-width: 576px) */
         @media (max-width: 576px) {
+            .hero-content-left {
+                padding-left: 0.5rem;
+            }
+            
+            .hero-content-right {
+                padding-right: 0.5rem;
+            }
+            
             .hero-section {
                 height: 100vh;
                 min-height: 100vh;
@@ -2258,14 +2680,50 @@
                 font-size: 2rem;
             }
             
-            .hero-subtitle {
+            .hero-description {
+                font-size: 0.85rem;
+            }
+            
+            .hero-price {
+                font-size: 1.6rem;
+            }
+            
+            .btn-hero-buy,
+            .btn-hero-wishlist {
+                padding: 12px 24px;
                 font-size: 0.9rem;
             }
             
-            .hero-section .btn-light,
-            .hero-section .btn-outline-light {
-                padding: 10px 16px;
+            .hero-section .hero-buttons {
+                max-width: 250px;
+            }
+            
+            .robux-calculator {
+                max-width: 100%;
+                padding: 1.25rem;
+            }
+            
+            .calculator-title {
+                font-size: 1.2rem;
+            }
+            
+            .calculator-subtitle {
                 font-size: 0.85rem;
+                margin-bottom: 1rem;
+            }
+            
+            .calculator-input {
+                padding: 10px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .result-price {
+                font-size: 1.2rem;
+            }
+            
+            .btn-calculator-search {
+                padding: 10px 18px;
+                font-size: 0.9rem;
             }
             
             .wallet-balance {
@@ -2357,6 +2815,14 @@
 
         /* Extra Small Mobile (max-width: 480px) */
         @media (max-width: 480px) {
+            .hero-content-left {
+                padding-left: 0.5rem;
+            }
+            
+            .hero-content-right {
+                padding-right: 0.5rem;
+            }
+            
             .hero-section {
                 padding: 2rem 0;
             }
@@ -2371,6 +2837,75 @@
 
             .hero-title {
                 font-size: 1.8rem;
+            }
+            
+            .hero-description {
+                font-size: 0.8rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-price {
+                font-size: 1.5rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .btn-hero-buy,
+            .btn-hero-wishlist {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+            
+            .hero-section .hero-buttons {
+                max-width: 220px;
+            }
+            
+            .robux-calculator {
+                padding: 1rem;
+            }
+            
+            .calculator-title {
+                font-size: 1.1rem;
+            }
+            
+            .calculator-subtitle {
+                font-size: 0.8rem;
+                margin-bottom: 1rem;
+            }
+            
+            .calculator-input {
+                padding: 8px 10px;
+                font-size: 0.85rem;
+            }
+            
+            .calculator-result {
+                padding: 0.75rem 1rem;
+            }
+            
+            .result-label {
+                font-size: 0.75rem;
+            }
+            
+            .result-price {
+                font-size: 1.1rem;
+            }
+            
+            .btn-calculator-search {
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+            
+            .hero-nav {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+            
+            .hero-nav-prev {
+                left: 8px;
+            }
+            
+            .hero-nav-next {
+                right: 8px;
             }
             
             .hero-subtitle {
@@ -2462,6 +2997,91 @@
 
             .card-text {
                 font-size: 0.8rem;
+            }
+        }
+
+        /* Very Small Mobile (max-width: 375px) */
+        @media (max-width: 375px) {
+            .hero-content-left {
+                padding-left: 0.25rem;
+            }
+            
+            .hero-content-right {
+                padding-right: 0.25rem;
+            }
+            
+            .hero-title {
+                font-size: 1.5rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .hero-description {
+                font-size: 0.75rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .hero-price {
+                font-size: 1.2rem;
+                margin-bottom: 0.6rem;
+            }
+            
+            .btn-hero-buy,
+            .btn-hero-wishlist {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+            
+            .hero-section .hero-buttons {
+                max-width: 200px;
+            }
+            
+            .robux-calculator {
+                padding: 0.875rem;
+            }
+            
+            .calculator-title {
+                font-size: 1rem;
+            }
+            
+            .calculator-subtitle {
+                font-size: 0.75rem;
+                margin-bottom: 0.875rem;
+            }
+            
+            .calculator-input {
+                padding: 8px;
+                font-size: 0.8rem;
+            }
+            
+            .calculator-result {
+                padding: 0.625rem 0.875rem;
+            }
+            
+            .result-label {
+                font-size: 0.7rem;
+            }
+            
+            .result-price {
+                font-size: 1rem;
+            }
+            
+            .btn-calculator-search {
+                padding: 8px 14px;
+                font-size: 0.8rem;
+            }
+            
+            .hero-nav {
+                width: 32px;
+                height: 32px;
+                font-size: 0.85rem;
+            }
+            
+            .hero-nav-prev {
+                left: 5px;
+            }
+            
+            .hero-nav-next {
+                right: 5px;
             }
         }
 
@@ -3557,28 +4177,96 @@
         }
 
         // Hero Slider Functionality
+        let currentHeroSlide = 0;
+        let heroSlides = null;
+        let totalHeroSlides = 0;
+        let heroSliderInterval = null;
+        
+        function changeHeroSlide(direction) {
+            // Re-query in case DOM changed
+            if (!heroSlides || heroSlides.length === 0) {
+                heroSlides = document.querySelectorAll('.hero-slide');
+                totalHeroSlides = heroSlides.length;
+            }
+            
+            if (totalHeroSlides === 0) {
+                console.warn('⚠️ No hero slides found');
+                return;
+            }
+            
+            console.log('🔄 Changing slide from', currentHeroSlide + 1, 'direction:', direction);
+            
+            // Remove active from current
+            heroSlides[currentHeroSlide].classList.remove('active');
+            
+            // Calculate next slide
+            currentHeroSlide += direction;
+            
+            if (currentHeroSlide >= totalHeroSlides) {
+                currentHeroSlide = 0;
+            } else if (currentHeroSlide < 0) {
+                currentHeroSlide = totalHeroSlides - 1;
+            }
+            
+            // Add active to new slide
+            heroSlides[currentHeroSlide].classList.add('active');
+            console.log('✅ Hero slide changed to:', currentHeroSlide + 1, 'of', totalHeroSlides);
+            
+            // Debug: log all slides status
+            heroSlides.forEach((slide, index) => {
+                const isActive = slide.classList.contains('active');
+                console.log(`  Slide ${index + 1}: ${isActive ? '🟢 ACTIVE' : '⚫ inactive'}`);
+            });
+        }
+        
         function initHeroSlider() {
-            const slides = document.querySelectorAll('.hero-slide');
-            let currentSlide = 0;
+            console.log('🎬 initHeroSlider called');
             
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    slide.classList.toggle('active', i === index);
+            // Wait for DOM and re-query slides
+            setTimeout(() => {
+                heroSlides = document.querySelectorAll('.hero-slide');
+                totalHeroSlides = heroSlides.length;
+                
+                console.log('📊 Found', totalHeroSlides, 'hero slides');
+                
+                if (totalHeroSlides === 0) {
+                    console.warn('❌ Cannot initialize hero slider - no slides found');
+                    return;
+                }
+                
+                console.log('✅ Hero slider initialized with', totalHeroSlides, 'slides');
+                
+                // Make sure first slide is active
+                if (heroSlides[0]) {
+                    heroSlides[0].classList.add('active');
+                    console.log('🟢 First slide set to active');
+                }
+                
+                // Log initial state
+                heroSlides.forEach((slide, index) => {
+                    const isActive = slide.classList.contains('active');
+                    const bgImage = window.getComputedStyle(slide).backgroundImage;
+                    console.log(`  Slide ${index + 1}: ${isActive ? '🟢 ACTIVE' : '⚫ inactive'} - ${bgImage.substring(0, 50)}...`);
                 });
-            }
-            
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            }
-            
-            // Auto slide every 4 seconds
-            setInterval(nextSlide, 4000);
+                
+                // Clear any existing interval
+                if (heroSliderInterval) {
+                    clearInterval(heroSliderInterval);
+                }
+                
+                // Auto slide every 5 seconds
+                heroSliderInterval = setInterval(() => {
+                    console.log('⏰ Auto-slide triggered');
+                    changeHeroSlide(1);
+                }, 5000);
+                
+                console.log('⏰ Auto-slide set to 5 seconds');
+            }, 100); // Small delay to ensure DOM is ready
         }
 
         // Initialize hero slider when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            initHeroSlider();
+            // Don't auto-init hero slider here - let page-specific scripts handle it
             initSidebar();
             initNotifications();
             // Update cart count on page load
