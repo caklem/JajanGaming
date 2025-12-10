@@ -17,18 +17,18 @@ class SellerProfileController extends Controller
             ->firstOrFail();
 
         // Get seller's products with pagination
-        $products = Product::where('seller_name', $seller->name)
+        $products = Product::where('seller_id', $seller->id)
             ->where('is_active', true)
             ->with(['ratings'])
             ->paginate(12);
 
         // Calculate seller statistics
-        $totalProducts = Product::where('seller_name', $seller->name)->count();
-        $activeProducts = Product::where('seller_name', $seller->name)->where('is_active', true)->count();
+        $totalProducts = Product::where('seller_id', $seller->id)->count();
+        $activeProducts = Product::where('seller_id', $seller->id)->where('is_active', true)->count();
         
         // Get orders that contain this seller's products
         $sellerOrders = Order::whereHas('orderItems.product', function($query) use ($seller) {
-            $query->where('seller_name', $seller->name);
+            $query->where('seller_id', $seller->id);
         })->with(['orderItems.product'])->get();
 
         $totalOrders = $sellerOrders->count();
@@ -57,11 +57,11 @@ class SellerProfileController extends Controller
             ->count();
         
         // Calculate total sales count for all seller's products
-        $totalSales = Product::where('seller_name', $seller->name)->sum('sales_count');
+        $totalSales = Product::where('seller_id', $seller->id)->sum('sales_count');
         
         // Calculate ratings using Rating records (not dummy)
         $ratingsBaseQuery = Rating::whereHas('product', function($query) use ($seller) {
-            $query->where('seller_name', $seller->name);
+            $query->where('seller_id', $seller->id);
         });
 
         $totalRatings = (clone $ratingsBaseQuery)->count();
@@ -77,7 +77,7 @@ class SellerProfileController extends Controller
         $recentOrders = $sellerOrders->sortByDesc('created_at')->take(10);
 
         // Get top selling products
-        $topProducts = Product::where('seller_name', $seller->name)
+        $topProducts = Product::where('seller_id', $seller->id)
             ->where('is_active', true)
             ->orderBy('sales_count', 'desc')
             ->take(5)
@@ -112,11 +112,18 @@ class SellerProfileController extends Controller
             }])
             ->get()
             ->map(function($seller) {
-                // Calculate additional stats for each seller
-                $seller->total_sales = Product::where('seller_name', $seller->name)->sum('sales_count');
-                $seller->average_rating = Product::where('seller_name', $seller->name)
-                    ->where('rating', '>', 0)
-                    ->avg('rating') ?? 0;
+                // Calculate total sales count for all seller's products
+                $seller->total_sales = Product::where('seller_id', $seller->id)->sum('sales_count');
+                
+                // Calculate average rating from Rating model (actual reviews)
+                $seller->average_rating = Rating::whereHas('product', function($query) use ($seller) {
+                    $query->where('seller_id', $seller->id);
+                })->avg('rating') ?? 0;
+                
+                // Get total number of ratings
+                $seller->total_ratings = Rating::whereHas('product', function($query) use ($seller) {
+                    $query->where('seller_id', $seller->id);
+                })->count();
                 
                 return $seller;
             })

@@ -159,34 +159,45 @@
 
                             <!-- Seller Info -->
                             <div class="mb-2">
-                                <div class="d-flex align-items-center">
-                                    <div class="seller-avatar me-2">
-                                        @if ($topProduct->seller && $topProduct->seller->profile_photo)
-                                            <img src="{{ asset('storage/' . $topProduct->seller->profile_photo) }}"
-                                                alt="{{ $topProduct->seller_name }}" class="rounded-circle"
-                                                style="width: 28px; height: 28px; object-fit: cover;">
-                                        @else
+                                @if ($topProduct->seller && $topProduct->seller->id)
+                                    <a href="{{ route('seller.profile', $topProduct->seller->id) }}"
+                                        class="d-flex align-items-center text-decoration-none seller-link-upcoming seller-clickable"
+                                        title="View {{ $topProduct->seller_name }}'s profile">
+                                        <div class="seller-avatar me-2">
+                                            @if ($topProduct->seller->profile_photo)
+                                                <img src="{{ asset('storage/' . $topProduct->seller->profile_photo) }}"
+                                                    alt="{{ $topProduct->seller_name }}" class="rounded-circle"
+                                                    style="width: 28px; height: 28px; object-fit: cover;">
+                                            @else
+                                                <div class="bg-light d-flex align-items-center justify-content-center rounded-circle"
+                                                    style="width: 28px; height: 28px;">
+                                                    <i class="fas fa-user fa-xs text-muted"></i>
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div>
+                                            <small class="text-muted d-block" style="font-size: 0.75rem;">Seller:</small>
+                                            <span class="fw-medium text-white" style="font-size: 0.85rem;">
+                                                {{ $topProduct->seller_name }}
+                                                <i class="fas fa-external-link-alt ms-1" style="font-size: 0.6rem;"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                @else
+                                    <div class="d-flex align-items-center">
+                                        <div class="seller-avatar me-2">
                                             <div class="bg-light d-flex align-items-center justify-content-center rounded-circle"
                                                 style="width: 28px; height: 28px;">
                                                 <i class="fas fa-user fa-xs text-muted"></i>
                                             </div>
-                                        @endif
-                                    </div>
-                                    <div>
-                                        <small class="text-muted d-block" style="font-size: 0.75rem;">Seller:</small>
-                                        @if ($topProduct->seller && $topProduct->seller->id)
-                                            <a href="{{ route('seller.profile', $topProduct->seller->id) }}"
-                                                class="fw-medium text-white text-decoration-none seller-link-upcoming"
-                                                onclick="event.stopPropagation();" style="font-size: 0.85rem;">
-                                                {{ $topProduct->seller_name }}
-                                                <i class="fas fa-external-link-alt ms-1" style="font-size: 0.6rem;"></i>
-                                            </a>
-                                        @else
+                                        </div>
+                                        <div>
+                                            <small class="text-muted d-block" style="font-size: 0.75rem;">Seller:</small>
                                             <span class="fw-medium text-white"
                                                 style="font-size: 0.85rem;">{{ $topProduct->seller_name }}</span>
-                                        @endif
+                                        </div>
                                     </div>
-                                </div>
+                                @endif
                             </div>
 
                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -244,7 +255,7 @@
         <div class="row">
             @forelse($products as $product)
                 <div class="col-12 col-md-6 mb-4">
-                    <div class="card-landscape h-100" onclick="window.location='{{ route('products.show', $product) }}'">
+                    <div class="card-landscape h-100" data-product-url="{{ route('products.show', $product) }}" style="cursor: pointer;">>
                         <div class="card-landscape-image">
                             <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}">
                             <button class="favorite-btn-landscape"
@@ -274,34 +285,45 @@
 
                             <!-- Seller Info -->
                             <div class="mb-2">
-                                <div class="d-flex align-items-center">
-                                    <div class="seller-avatar me-2">
-                                        @if ($product->seller && $product->seller->id && $product->seller->profile_photo)
-                                            <img src="{{ asset('storage/' . $product->seller->profile_photo) }}"
-                                                alt="{{ $product->seller_name }}" class="rounded-circle"
-                                                style="width: 24px; height: 24px; object-fit: cover;">
-                                        @else
+                                @if ($product->seller && $product->seller->id)
+                                    <a href="{{ route('seller.profile', $product->seller->id) }}"
+                                        class="d-flex align-items-center text-decoration-none seller-link-landscape seller-clickable"
+                                        title="View {{ $product->seller_name }}'s profile">
+                                        <div class="seller-avatar me-2">
+                                            @if ($product->seller->profile_photo)
+                                                <img src="{{ asset('storage/' . $product->seller->profile_photo) }}"
+                                                    alt="{{ $product->seller_name }}" class="rounded-circle"
+                                                    style="width: 24px; height: 24px; object-fit: cover;">
+                                            @else
+                                                <div class="bg-secondary d-flex align-items-center justify-content-center rounded-circle"
+                                                    style="width: 24px; height: 24px;">
+                                                    <i class="fas fa-user fa-xs text-white"></i>
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div>
+                                            <small class="text-muted d-block" style="font-size: 0.7rem;">Seller:</small>
+                                            <span class="text-white" style="font-size: 0.85rem;">
+                                                {{ $product->seller_name }}
+                                                <i class="fas fa-external-link-alt ms-1" style="font-size: 0.6rem;"></i>
+                                            </span>
+                                        </div>
+                                    </a>
+                                @else
+                                    <div class="d-flex align-items-center">
+                                        <div class="seller-avatar me-2">
                                             <div class="bg-secondary d-flex align-items-center justify-content-center rounded-circle"
                                                 style="width: 24px; height: 24px;">
                                                 <i class="fas fa-user fa-xs text-white"></i>
                                             </div>
-                                        @endif
-                                    </div>
-                                    <div>
-                                        <small class="text-muted d-block" style="font-size: 0.7rem;">Seller:</small>
-                                        @if ($product->seller && $product->seller->id)
-                                            <a href="{{ route('seller.profile', $product->seller->id) }}"
-                                                class="seller-link-landscape text-decoration-none"
-                                                onclick="event.stopPropagation();" style="font-size: 0.85rem;">
-                                                <span class="text-white">{{ $product->seller_name }}</span>
-                                                <i class="fas fa-external-link-alt ms-1" style="font-size: 0.6rem;"></i>
-                                            </a>
-                                        @else
+                                        </div>
+                                        <div>
+                                            <small class="text-muted d-block" style="font-size: 0.7rem;">Seller:</small>
                                             <span class="text-white"
                                                 style="font-size: 0.85rem;">{{ $product->seller_name }}</span>
-                                        @endif
+                                        </div>
                                     </div>
-                                </div>
+                                @endif
                             </div>
 
                             <!-- Rating and Sales -->
@@ -474,25 +496,31 @@
             });
         });
 
-        // Initialize hero slider for home page - OUTSIDE DOMContentLoaded
-        console.log('🚀 Home page script loaded');
-        console.log('🔍 Checking for initHeroSlider function...');
+        // Initialize hero slider - SIMPLE AND DIRECT
+        console.log('HOME: Starting hero slider initialization...');
 
-        if (typeof initHeroSlider === 'function') {
-            console.log('✅ initHeroSlider found, calling it now...');
-            initHeroSlider();
-        } else {
-            console.warn('❌ initHeroSlider not found!');
-
-            // Try again after a short delay
-            setTimeout(() => {
-                if (typeof initHeroSlider === 'function') {
-                    console.log('✅ initHeroSlider found on retry, calling it now...');
-                    initHeroSlider();
-                } else {
-                    console.error('❌ initHeroSlider still not found after delay');
+        if (document.readyState === 'loading') {
+            // DOM not ready yet
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('HOME: DOM ready, calling initHeroSlider');
+                if (window.initHeroSlider) {
+                    window.initHeroSlider();
                 }
-            }, 200);
+            });
+        } else {
+            // DOM already ready
+            console.log('HOME: DOM already ready, calling initHeroSlider');
+            if (window.initHeroSlider) {
+                window.initHeroSlider();
+            } else {
+                // Function not loaded yet, wait a bit
+                setTimeout(function() {
+                    console.log('HOME: Retry calling initHeroSlider');
+                    if (window.initHeroSlider) {
+                        window.initHeroSlider();
+                    }
+                }, 100);
+            }
         }
 
 

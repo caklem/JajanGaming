@@ -250,36 +250,48 @@
 
                                     <!-- Seller Info -->
                                     <div class="mb-2">
-                                        <div class="d-flex align-items-center">
-                                            <div class="seller-avatar me-2">
-                                                @if ($product->seller && $product->seller->id && $product->seller->profile_photo)
-                                                    <img src="{{ asset('storage/' . $product->seller->profile_photo) }}"
-                                                        alt="{{ $product->seller_name }}" class="rounded-circle"
-                                                        style="width: 20px; height: 20px; object-fit: cover;">
-                                                @else
+                                        @if ($product->seller && $product->seller->id)
+                                            <a href="{{ route('seller.profile', $product->seller->id) }}"
+                                                class="d-flex align-items-center text-decoration-none seller-link-browse seller-clickable"
+                                                title="View {{ $product->seller_name }}'s profile">
+                                                <div class="seller-avatar me-2">
+                                                    @if ($product->seller->profile_photo)
+                                                        <img src="{{ asset('storage/' . $product->seller->profile_photo) }}"
+                                                            alt="{{ $product->seller_name }}" class="rounded-circle"
+                                                            style="width: 20px; height: 20px; object-fit: cover;">
+                                                    @else
+                                                        <div class="bg-secondary d-flex align-items-center justify-content-center rounded-circle"
+                                                            style="width: 20px; height: 20px;">
+                                                            <i class="fas fa-user fa-xs text-white"></i>
+                                                        </div>
+                                                    @endif
+                                                </div>
+                                                <div>
+                                                    <small class="text-muted d-block"
+                                                        style="font-size: 0.65rem;">Seller:</small>
+                                                    <span class="text-white" style="font-size: 0.8rem;">
+                                                        {{ $product->seller_name }}
+                                                        <i class="fas fa-external-link-alt ms-1"
+                                                            style="font-size: 0.55rem;"></i>
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        @else
+                                            <div class="d-flex align-items-center">
+                                                <div class="seller-avatar me-2">
                                                     <div class="bg-secondary d-flex align-items-center justify-content-center rounded-circle"
                                                         style="width: 20px; height: 20px;">
                                                         <i class="fas fa-user fa-xs text-white"></i>
                                                     </div>
-                                                @endif
-                                            </div>
-                                            <div>
-                                                <small class="text-muted d-block"
-                                                    style="font-size: 0.65rem;">Seller:</small>
-                                                @if ($product->seller && $product->seller->id)
-                                                    <a href="{{ route('seller.profile', $product->seller->id) }}"
-                                                        class="seller-link-browse text-decoration-none"
-                                                        onclick="event.stopPropagation();" style="font-size: 0.8rem;">
-                                                        <span class="text-white">{{ $product->seller_name }}</span>
-                                                        <i class="fas fa-external-link-alt ms-1"
-                                                            style="font-size: 0.55rem;"></i>
-                                                    </a>
-                                                @else
+                                                </div>
+                                                <div>
+                                                    <small class="text-muted d-block"
+                                                        style="font-size: 0.65rem;">Seller:</small>
                                                     <span class="text-white"
                                                         style="font-size: 0.8rem;">{{ $product->seller_name }}</span>
-                                                @endif
+                                                </div>
                                             </div>
-                                        </div>
+                                        @endif
                                     </div>
 
                                     <!-- Rating and Sales -->

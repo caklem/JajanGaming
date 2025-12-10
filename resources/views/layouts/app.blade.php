@@ -42,28 +42,29 @@
         body {
             background-color: var(--bg-light);
             color: var(--text-color);
+            padding-top: 76px;
         }
 
         .navbar {
             background: #1a1a2e !important;
             border-bottom: none;
             transition: all 0.3s ease;
-            position: sticky !important;
+            position: fixed !important;
             top: 0 !important;
-            z-index: 1050 !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 1030 !important;
             padding: 1rem 0;
             overflow: visible;
-            width: 100%;
+            width: 100% !important;
         }
 
         .navbar.scrolled {
-            background: #1a1a2e !important;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            position: sticky !important;
-            top: 0 !important;
+            background: #16213e !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
-        .navbar.scrolled::after {
+        .navbar::after {
             background: linear-gradient(to right,
                     transparent 0%,
                     transparent 15%,
@@ -2261,20 +2262,38 @@
         }
 
         .hero-stats {
-            margin-top: 1.5rem;
+            margin-top: 2rem;
         }
 
         .hero-stats .stat-item {
             display: flex;
             align-items: center;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.95rem;
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 0.8rem 1.3rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 0.75rem;
+            transition: all 0.3s ease;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-stats .stat-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(0, 212, 255, 0.4);
+            transform: translateX(8px) scale(1.05);
+            box-shadow: 0 6px 25px rgba(0, 212, 255, 0.25);
         }
 
         .hero-stats .stat-item i {
-            color: var(--primary-color);
-            margin-right: 0.5rem;
-            font-size: 1.1rem;
+            color: #00d4ff;
+            margin-right: 0.85rem;
+            font-size: 1.4rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 212, 255, 0.4));
         }
 
         .hero-title .fa-hand-wave {
@@ -2412,33 +2431,33 @@
         }
 
         .hero-title {
-            font-size: 4.5rem;
+            font-size: 3.8rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
+            color: #ffffff;
             text-shadow:
-                0 4px 8px rgba(0, 0, 0, 0.8),
-                0 2px 4px rgba(0, 0, 0, 0.6);
+                0 2px 25px rgba(0, 0, 0, 0.7),
+                0 4px 35px rgba(0, 212, 255, 0.15);
             position: relative;
             z-index: 5;
-            line-height: 1.1;
-            letter-spacing: 0.02em;
-            color: #ffffff;
-            text-transform: uppercase;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
         }
 
         .hero-description {
-            font-size: 1.1rem;
-            font-weight: 400;
+            font-size: 1.3rem;
+            font-weight: 500;
             margin-bottom: 2rem;
-            opacity: 0.95;
-            text-shadow:
-                0 2px 4px rgba(0, 0, 0, 0.7);
+            color: rgba(255, 255, 255, 0.85);
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
             position: relative;
             z-index: 5;
             line-height: 1.7;
-            letter-spacing: 0.01em;
-            color: #ffffff;
+            letter-spacing: 0.02em;
+            color: rgba(255, 255, 255, 0.95);
             max-width: 600px;
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
         }
 
         .hero-price {
@@ -3016,6 +3035,61 @@
             font-size: 0.9rem;
             font-weight: 600;
             color: #2d3748;
+        }
+
+        /* Seller Link Styling */
+        .seller-link-upcoming,
+        .seller-link-landscape,
+        .seller-link-browse,
+        .seller-clickable {
+            color: #ffffff !important;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 4px 8px;
+            border-radius: 8px;
+            cursor: pointer !important;
+            z-index: 10;
+            pointer-events: auto !important;
+        }
+
+        .seller-link-upcoming:hover,
+        .seller-link-landscape:hover,
+        .seller-link-browse:hover,
+        .seller-clickable:hover {
+            color: #00d4ff !important;
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateX(3px);
+        }
+
+        .seller-link-upcoming .seller-avatar,
+        .seller-link-landscape .seller-avatar,
+        .seller-link-browse .seller-avatar {
+            transition: transform 0.3s ease;
+        }
+
+        .seller-link-upcoming:hover .seller-avatar,
+        .seller-link-landscape:hover .seller-avatar,
+        .seller-link-browse:hover .seller-avatar {
+            transform: scale(1.15);
+        }
+
+        .seller-link-upcoming i,
+        .seller-link-landscape i,
+        .seller-link-browse i {
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .seller-link-upcoming:hover i,
+        .seller-link-landscape:hover i,
+        .seller-link-browse:hover i {
+            opacity: 1;
+            transform: translateX(2px);
+        }
+
+        /* Seller Avatar Hover Effect */
+        .seller-avatar {
+            transition: transform 0.3s ease;
         }
 
         .price-display {
@@ -4829,6 +4903,112 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // ===================================================================
+        // HERO SLIDER - MUST BE COMPLETELY GLOBAL
+        // ===================================================================
+        console.log('🔧 Hero slider script loading...');
+
+        // Declare in global scope immediately
+        var currentSlide = 0;
+        var slideInterval = null;
+
+        // Define functions in global scope (no const/let to ensure hoisting)
+        changeHeroSlide = function(direction) {
+            console.log('🎯 changeHeroSlide called with direction:', direction);
+            const slides = document.querySelectorAll('.hero-slide');
+
+            console.log('📊 Found slides:', slides.length);
+
+            if (!slides || slides.length === 0) {
+                console.error('❌ No slides found!');
+                return;
+            }
+
+            // Remove active from current slide
+            slides[currentSlide].classList.remove('active');
+            console.log('➖ Removed active from slide', currentSlide + 1);
+
+            // Calculate new slide index
+            currentSlide = currentSlide + direction;
+
+            // Loop around
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            }
+
+            // Add active to new slide
+            slides[currentSlide].classList.add('active');
+            console.log('✅ Added active to slide', currentSlide + 1);
+
+            // Reset auto-slide timer
+            resetAutoSlide();
+        };
+
+        resetAutoSlide = function() {
+            console.log('🔄 Resetting auto-slide timer...');
+
+            // Clear existing interval
+            if (slideInterval) {
+                clearInterval(slideInterval);
+                console.log('🛑 Cleared existing interval');
+            }
+
+            // Start new interval
+            slideInterval = setInterval(function() {
+                console.log('⏰ AUTO-SLIDE TRIGGERED!');
+                changeHeroSlide(1);
+            }, 5000);
+
+            console.log('✅ Auto-slide interval started (5 seconds)');
+        };
+
+        initHeroSlider = function() {
+            console.log('🎬 initHeroSlider called!');
+
+            const slides = document.querySelectorAll('.hero-slide');
+            console.log('📊 Queried slides, found:', slides.length);
+
+            if (!slides || slides.length === 0) {
+                console.error('❌ Cannot init slider - no slides found!');
+                console.log('🔍 Checking if .hero-slide elements exist in DOM...');
+                console.log('DOM body:', document.body ? 'exists' : 'not found');
+                return;
+            }
+
+            console.log('✅ Hero slider initialized with', slides.length, 'slides');
+
+            // Ensure first slide is active
+            slides.forEach((slide, index) => {
+                if (index === 0) {
+                    slide.classList.add('active');
+                    console.log('✅ Set slide 1 as active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            currentSlide = 0;
+
+            // Start auto-slide
+            console.log('🚀 Starting auto-slide...');
+            resetAutoSlide();
+        };
+
+        // Also attach to window object for extra safety
+        window.changeHeroSlide = changeHeroSlide;
+        window.initHeroSlider = initHeroSlider;
+        window.resetAutoSlide = resetAutoSlide;
+
+        console.log('✅ Hero slider functions attached to window object');
+        console.log('   window.changeHeroSlide:', typeof window.changeHeroSlide);
+        console.log('   window.initHeroSlider:', typeof window.initHeroSlider);
+
+        // ===================================================================
+        // OTHER SCRIPTS
+        // ===================================================================
+
         // Sticky Navbar Effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
@@ -5125,96 +5305,6 @@
             }, 3000);
         }
 
-        // Hero Slider Functionality
-        let currentHeroSlide = 0;
-        let heroSlides = null;
-        let totalHeroSlides = 0;
-        let heroSliderInterval = null;
-
-        function changeHeroSlide(direction) {
-            // Re-query in case DOM changed
-            if (!heroSlides || heroSlides.length === 0) {
-                heroSlides = document.querySelectorAll('.hero-slide');
-                totalHeroSlides = heroSlides.length;
-            }
-
-            if (totalHeroSlides === 0) {
-                console.warn('⚠️ No hero slides found');
-                return;
-            }
-
-            console.log('🔄 Changing slide from', currentHeroSlide + 1, 'direction:', direction);
-
-            // Remove active from current
-            heroSlides[currentHeroSlide].classList.remove('active');
-
-            // Calculate next slide
-            currentHeroSlide += direction;
-
-            if (currentHeroSlide >= totalHeroSlides) {
-                currentHeroSlide = 0;
-            } else if (currentHeroSlide < 0) {
-                currentHeroSlide = totalHeroSlides - 1;
-            }
-
-            // Add active to new slide
-            heroSlides[currentHeroSlide].classList.add('active');
-            console.log('✅ Hero slide changed to:', currentHeroSlide + 1, 'of', totalHeroSlides);
-
-            // Debug: log all slides status
-            heroSlides.forEach((slide, index) => {
-                const isActive = slide.classList.contains('active');
-                console.log(`  Slide ${index + 1}: ${isActive ? '🟢 ACTIVE' : '⚫ inactive'}`);
-            });
-        }
-
-        function initHeroSlider() {
-            console.log('🎬 initHeroSlider called');
-
-            // Wait for DOM and re-query slides
-            setTimeout(() => {
-                heroSlides = document.querySelectorAll('.hero-slide');
-                totalHeroSlides = heroSlides.length;
-
-                console.log('📊 Found', totalHeroSlides, 'hero slides');
-
-                if (totalHeroSlides === 0) {
-                    console.warn('❌ Cannot initialize hero slider - no slides found');
-                    return;
-                }
-
-                console.log('✅ Hero slider initialized with', totalHeroSlides, 'slides');
-
-                // Make sure first slide is active
-                if (heroSlides[0]) {
-                    heroSlides[0].classList.add('active');
-                    console.log('🟢 First slide set to active');
-                }
-
-                // Log initial state
-                heroSlides.forEach((slide, index) => {
-                    const isActive = slide.classList.contains('active');
-                    const bgImage = window.getComputedStyle(slide).backgroundImage;
-                    console.log(
-                        `  Slide ${index + 1}: ${isActive ? '🟢 ACTIVE' : '⚫ inactive'} - ${bgImage.substring(0, 50)}...`
-                    );
-                });
-
-                // Clear any existing interval
-                if (heroSliderInterval) {
-                    clearInterval(heroSliderInterval);
-                }
-
-                // Auto slide every 5 seconds
-                heroSliderInterval = setInterval(() => {
-                    console.log('⏰ Auto-slide triggered');
-                    changeHeroSlide(1);
-                }, 5000);
-
-                console.log('⏰ Auto-slide set to 5 seconds');
-            }, 100); // Small delay to ensure DOM is ready
-        }
-
         // Initialize hero slider when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             // Don't auto-init hero slider here - let page-specific scripts handle it
@@ -5295,9 +5385,9 @@
             }
         `;
 
-        const style = document.createElement('style');
-        style.textContent = shakeKeyframes;
-        document.head.appendChild(style);
+        const shakeStyle = document.createElement('style');
+        shakeStyle.textContent = shakeKeyframes;
+        document.head.appendChild(shakeStyle);
 
         // Sidebar Functionality
         function initSidebar() {
@@ -5442,6 +5532,58 @@
                 console.log(`Synced quantity ${modalQuantity} to product card ${productId}`);
             }
         }
+
+        // Handle card and seller link navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle all cards with data-product-url or onclick
+            const cards = document.querySelectorAll('.card, .card-landscape');
+            
+            cards.forEach(card => {
+                const sellerLink = card.querySelector('.seller-clickable');
+                const productUrl = card.getAttribute('data-product-url');
+                const onclickAttr = card.getAttribute('onclick');
+                
+                // Extract URL from onclick if exists
+                let cardUrl = productUrl;
+                if (!cardUrl && onclickAttr) {
+                    const urlMatch = onclickAttr.match(/window\.location='([^']+)'/);
+                    if (urlMatch) {
+                        cardUrl = urlMatch[1];
+                    }
+                }
+                
+                if (cardUrl) {
+                    // Remove onclick attribute
+                    card.removeAttribute('onclick');
+                    card.style.cursor = 'pointer';
+                    
+                    // Add click handler to card
+                    card.addEventListener('click', function(e) {
+                        // Check if click is on seller link
+                        if (e.target.closest('.seller-clickable')) {
+                            return; // Let the seller link handle it
+                        }
+                        
+                        // Check if click is on favorite button
+                        if (e.target.closest('.favorite-btn, .favorite-btn-landscape')) {
+                            return; // Let the favorite button handle it
+                        }
+                        
+                        // Navigate to product
+                        window.location.href = cardUrl;
+                    });
+                }
+                
+                // Handle seller link clicks
+                if (sellerLink) {
+                    sellerLink.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        window.location.href = this.href;
+                    });
+                }
+            });
+        })
     </script>
 
     @yield('scripts')
