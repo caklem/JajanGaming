@@ -499,28 +499,26 @@
         }
     }
 
-    // Hero Carousel Functions
-    let currentHeroSlide = 0;
-    const heroSlides = document.querySelectorAll('.hero-slide');
-    const totalHeroSlides = heroSlides.length;
+    // Initialize hero slider for home page
+    console.log('🎬 Home page script loaded');
+    console.log('🔍 Checking for initHeroSlider function...');
 
-    function changeHeroSlide(direction) {
-        heroSlides[currentHeroSlide].classList.remove('active');
-        currentHeroSlide += direction;
+    if (typeof initHeroSlider === 'function') {
+        console.log('✅ initHeroSlider found, calling it now...');
+        initHeroSlider();
+    } else {
+        console.warn('⚠️ initHeroSlider not found!');
 
-        if (currentHeroSlide >= totalHeroSlides) {
-            currentHeroSlide = 0;
-        } else if (currentHeroSlide < 0) {
-            currentHeroSlide = totalHeroSlides - 1;
-        }
-
-        heroSlides[currentHeroSlide].classList.add('active');
+        // Try again after a short delay
+        setTimeout(() => {
+            if (typeof initHeroSlider === 'function') {
+                console.log('✅ initHeroSlider found on retry, calling it now...');
+                initHeroSlider();
+            } else {
+                console.error('⚠️ initHeroSlider still not found after delay');
+            }
+        }, 200);
     }
-
-    // Auto-play carousel
-    setInterval(() => {
-        changeHeroSlide(1);
-    }, 5000);
 
     // Upcoming Games Scroll
     function scrollUpcomingGames(direction) {

@@ -11,6 +11,7 @@ class Product extends Model
         'description',
         'game_name',
         'game_type',
+        'seller_id',
         'seller_name',
         'seller_photo',
         'rating',
@@ -41,10 +42,7 @@ class Product extends Model
 
     public function seller()
     {
-        return $this->belongsTo(User::class, 'seller_name', 'name')->withDefault([
-            'name' => 'Unknown Seller',
-            'profile_photo' => null,
-        ]);
+        return $this->belongsTo(User::class, 'seller_id');
     }
 
     public function ratings()
