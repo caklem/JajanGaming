@@ -3040,22 +3040,26 @@
         /* Seller Link Styling */
         .seller-link-upcoming,
         .seller-link-landscape,
-        .seller-link-browse,
-        .seller-clickable {
+        .seller-link-browse {
             color: #ffffff !important;
             transition: all 0.3s ease;
             position: relative;
             padding: 4px 8px;
             border-radius: 8px;
             cursor: pointer !important;
+            pointer-events: auto !important;
             z-index: 10;
+        }
+
+        .seller-link-upcoming *,
+        .seller-link-landscape *,
+        .seller-link-browse * {
             pointer-events: auto !important;
         }
 
         .seller-link-upcoming:hover,
         .seller-link-landscape:hover,
-        .seller-link-browse:hover,
-        .seller-clickable:hover {
+        .seller-link-browse:hover {
             color: #00d4ff !important;
             background: rgba(0, 212, 255, 0.1);
             transform: translateX(3px);
@@ -5533,53 +5537,54 @@
             }
         }
 
-        // Handle card and seller link navigation
+        // Fix seller link clicks by handling card navigation properly
         document.addEventListener('DOMContentLoaded', function() {
-            // Handle all cards with data-product-url or onclick
+            console.log('Initializing seller link handlers...');
+
+            // Method 1: Handle seller links directly
+            const sellerLinks = document.querySelectorAll('.seller-clickable');
+            console.log('Found seller links:', sellerLinks.length);
+
+            sellerLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    console.log('Seller link clicked, navigating to:', this.href);
+                    window.location.href = this.href;
+                }, true);
+            });
+
+            // Method 2: Disable card onclick for cards with seller links
             const cards = document.querySelectorAll('.card, .card-landscape');
-            
+            console.log('Found cards:', cards.length);
+
             cards.forEach(card => {
                 const sellerLink = card.querySelector('.seller-clickable');
-                const productUrl = card.getAttribute('data-product-url');
-                const onclickAttr = card.getAttribute('onclick');
-                
-                // Extract URL from onclick if exists
-                let cardUrl = productUrl;
-                if (!cardUrl && onclickAttr) {
-                    const urlMatch = onclickAttr.match(/window\.location='([^']+)'/);
-                    if (urlMatch) {
-                        cardUrl = urlMatch[1];
-                    }
-                }
-                
-                if (cardUrl) {
-                    // Remove onclick attribute
+
+                if (sellerLink) {
+                    console.log('Card has seller link, removing onclick');
+                    // Store original onclick
+                    const originalOnclick = card.getAttribute('onclick');
+
+                    // Replace card onclick with click handler
                     card.removeAttribute('onclick');
                     card.style.cursor = 'pointer';
-                    
-                    // Add click handler to card
+
                     card.addEventListener('click', function(e) {
-                        // Check if click is on seller link
+                        // If clicking on seller link or its children, do nothing (handled above)
                         if (e.target.closest('.seller-clickable')) {
-                            return; // Let the seller link handle it
+                            console.log('Click inside seller link, ignoring');
+                            return;
                         }
-                        
-                        // Check if click is on favorite button
-                        if (e.target.closest('.favorite-btn, .favorite-btn-landscape')) {
-                            return; // Let the favorite button handle it
+
+                        // Otherwise, execute original card navigation
+                        console.log('Click outside seller link, navigating to product');
+                        if (originalOnclick) {
+                            const urlMatch = originalOnclick.match(/window\.location='([^']+)'/);
+                            if (urlMatch) {
+                                window.location.href = urlMatch[1];
+                            }
                         }
-                        
-                        // Navigate to product
-                        window.location.href = cardUrl;
-                    });
-                }
-                
-                // Handle seller link clicks
-                if (sellerLink) {
-                    sellerLink.addEventListener('click', function(e) {
-                        e.stopPropagation();
-                        e.preventDefault();
-                        window.location.href = this.href;
                     });
                 }
             });

@@ -249,10 +249,11 @@
                                     </div>
 
                                     <!-- Seller Info -->
-                                    <div class="mb-2">
+                                    <div class="mb-2" style="position: relative; z-index: 5;">
                                         @if ($product->seller && $product->seller->id)
                                             <a href="{{ route('seller.profile', $product->seller->id) }}"
-                                                class="d-flex align-items-center text-decoration-none seller-link-browse seller-clickable"
+                                                class="d-flex align-items-center text-decoration-none seller-link-browse"
+                                                style="position: relative; z-index: 10;"
                                                 title="View {{ $product->seller_name }}'s profile">
                                                 <div class="seller-avatar me-2">
                                                     @if ($product->seller->profile_photo)

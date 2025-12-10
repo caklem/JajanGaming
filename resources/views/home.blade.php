@@ -158,10 +158,11 @@
                             <p class="upcoming-game-description">{{ Str::limit($topProduct->description, 60) }}</p>
 
                             <!-- Seller Info -->
-                            <div class="mb-2">
+                            <div class="mb-2" style="position: relative; z-index: 5;">
                                 @if ($topProduct->seller && $topProduct->seller->id)
                                     <a href="{{ route('seller.profile', $topProduct->seller->id) }}"
-                                        class="d-flex align-items-center text-decoration-none seller-link-upcoming seller-clickable"
+                                        class="d-flex align-items-center text-decoration-none seller-link-upcoming"
+                                        style="position: relative; z-index: 10;"
                                         title="View {{ $topProduct->seller_name }}'s profile">
                                         <div class="seller-avatar me-2">
                                             @if ($topProduct->seller->profile_photo)
@@ -255,7 +256,7 @@
         <div class="row">
             @forelse($products as $product)
                 <div class="col-12 col-md-6 mb-4">
-                    <div class="card-landscape h-100" data-product-url="{{ route('products.show', $product) }}" style="cursor: pointer;">>
+                    <div class="card-landscape h-100" onclick="window.location='{{ route('products.show', $product) }}'">
                         <div class="card-landscape-image">
                             <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}">
                             <button class="favorite-btn-landscape"
@@ -284,10 +285,11 @@
                             </div>
 
                             <!-- Seller Info -->
-                            <div class="mb-2">
+                            <div class="mb-2" style="position: relative; z-index: 5;">
                                 @if ($product->seller && $product->seller->id)
                                     <a href="{{ route('seller.profile', $product->seller->id) }}"
-                                        class="d-flex align-items-center text-decoration-none seller-link-landscape seller-clickable"
+                                        class="d-flex align-items-center text-decoration-none seller-link-landscape"
+                                        style="position: relative; z-index: 10;"
                                         title="View {{ $product->seller_name }}'s profile">
                                         <div class="seller-avatar me-2">
                                             @if ($product->seller->profile_photo)
