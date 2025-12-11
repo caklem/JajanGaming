@@ -7,44 +7,44 @@
         .product-detail-container {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             min-height: 100vh;
-            padding: 2rem 0;
+            padding: 1rem 0;
         }
 
         .product-hero {
             background: rgba(42, 42, 62, 0.7);
             backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
             border: 1px solid rgba(0, 212, 170, 0.15);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .product-title {
             color: #ffffff;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.35rem;
             letter-spacing: -0.02em;
             line-height: 1.3;
         }
 
         .product-subtitle {
             color: rgba(255, 255, 255, 0.6);
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             margin-bottom: 0;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         .product-main-section {
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
         }
 
         .product-image-wrapper {
-            background: 
+            background:
                 repeating-linear-gradient(45deg, rgba(0, 212, 170, 0.03) 0px, rgba(0, 212, 170, 0.03) 10px, transparent 10px, transparent 20px),
                 linear-gradient(135deg, rgba(26, 26, 46, 0.6) 0%, rgba(42, 42, 62, 0.6) 100%);
             border-radius: 16px;
@@ -81,7 +81,7 @@
         .main-product-image {
             width: 100%;
             height: 100%;
-            aspect-ratio: 5/3;
+            aspect-ratio: 2/1;
             object-fit: cover;
             object-position: center;
             display: block;
@@ -92,16 +92,16 @@
         .image-info-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 1.5rem;
+            gap: 0.65rem;
+            margin-top: 1rem;
         }
 
         .info-card-mini {
             background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 1rem;
+            border-radius: 10px;
+            padding: 0.65rem;
             text-align: center;
             transition: all 0.3s ease;
         }
@@ -113,25 +113,33 @@
         }
 
         .info-card-mini .icon {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+            margin-bottom: 0.35rem;
             display: block;
         }
 
-        .info-card-mini.stock .icon { color: #00d4aa; }
-        .info-card-mini.rating .icon { color: #ffc107; }
-        .info-card-mini.sales .icon { color: #667eea; }
+        .info-card-mini.stock .icon {
+            color: #00d4aa;
+        }
+
+        .info-card-mini.rating .icon {
+            color: #ffc107;
+        }
+
+        .info-card-mini.sales .icon {
+            color: #667eea;
+        }
 
         .info-card-mini .label {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: rgba(255, 255, 255, 0.5);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.2rem;
         }
 
         .info-card-mini .value {
-            font-size: 1rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: #ffffff;
         }
@@ -144,8 +152,8 @@
 
         .price-card {
             background: rgba(0, 0, 0, 0.4);
-            padding: 1.25rem;
-            border-radius: 12px;
+            padding: 1rem;
+            border-radius: 10px;
             border: 1px solid rgba(0, 212, 170, 0.25);
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         }
@@ -160,9 +168,9 @@
 
         .product-price {
             color: #00d4aa;
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             text-shadow: 0 2px 10px rgba(0, 212, 170, 0.3);
         }
 
@@ -174,17 +182,17 @@
         .rating-section {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            padding: 0.85rem;
+            gap: 0.5rem;
+            padding: 0.7rem;
             background: rgba(255, 193, 7, 0.1);
-            border-radius: 10px;
+            border-radius: 8px;
             border: 1px solid rgba(255, 193, 7, 0.3);
         }
 
         .rating-stars {
             display: flex;
-            gap: 0.25rem;
-            font-size: 1rem;
+            gap: 0.2rem;
+            font-size: 0.85rem;
         }
 
         .rating-stars i {
@@ -193,20 +201,111 @@
 
         .rating-info {
             color: rgba(255, 255, 255, 0.8);
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 500;
         }
 
         .stock-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            padding: 0.5rem 0.85rem;
+            gap: 0.35rem;
+            padding: 0.45rem 0.7rem;
             background: rgba(0, 212, 170, 0.15);
             border-radius: 8px;
             color: #00d4aa;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 600;
+        }
+
+        .seller-card {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 0.85rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .seller-card:hover {
+            background: rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 212, 170, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .seller-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .seller-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .seller-info {
+            flex: 1;
+        }
+
+        .seller-label {
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.2rem;
+        }
+
+        .seller-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .seller-verified {
+            color: #00d4aa;
+            font-size: 0.85rem;
+        }
+
+        .seller-stats {
+            display: flex;
+            gap: 1rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .seller-stat {
+            flex: 1;
+            text-align: center;
+        }
+
+        .seller-stat-value {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #00d4aa;
+            display: block;
+        }
+
+        .seller-stat-label {
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: block;
         }
 
         .product-actions {
@@ -219,10 +318,10 @@
             background: linear-gradient(135deg, #00d4aa 0%, #00a8cc 100%);
             color: white;
             border: none;
-            padding: 0.85rem 1rem;
-            border-radius: 10px;
+            padding: 0.7rem 0.85rem;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 212, 170, 0.4);
             text-align: center;
@@ -242,14 +341,14 @@
             background: rgba(255, 255, 255, 0.05);
             color: white;
             border: 2px solid rgba(255, 255, 255, 0.2);
-            padding: 0.75rem 1rem;
-            border-radius: 10px;
+            padding: 0.6rem 0.85rem;
+            border-radius: 8px;
             font-weight: 500;
             transition: all 0.3s ease;
             text-align: center;
             text-decoration: none;
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
         }
 
         .btn-secondary-action:hover {
@@ -302,20 +401,20 @@
         .description-section {
             background: rgba(42, 42, 62, 0.7);
             backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 1.75rem;
+            border-radius: 12px;
+            padding: 1.25rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .section-title {
             color: #ffffff;
-            font-size: 1.35rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.6rem;
         }
 
         .section-title::before {
@@ -451,7 +550,7 @@
                     <div class="product-image-wrapper">
                         <img src="{{ asset('img/' . $product->image) }}" alt="{{ $product->name }}" class="main-product-image">
                     </div>
-                    
+
                     <!-- Info Cards Below Image -->
                     <div class="image-info-cards">
                         <div class="info-card-mini stock">
@@ -507,6 +606,32 @@
                             {{ $product->quantity }} In Stock
                         </span>
                     </div>
+
+                    <!-- Seller Profile -->
+                    <a href="{{ route('seller.profile', ['sellerId' => $product->seller_id ?? 1]) }}" class="seller-card">
+                        <div class="seller-header">
+                            <div class="seller-avatar">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="seller-info">
+                                <div class="seller-label">Seller</div>
+                                <div class="seller-name">
+                                    {{ $product->seller_name ?? 'GameHub Official' }}
+                                    <i class="fas fa-check-circle seller-verified" title="Verified Seller"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seller-stats">
+                            <div class="seller-stat">
+                                <span class="seller-stat-value">98%</span>
+                                <span class="seller-stat-label">Rating</span>
+                            </div>
+                            <div class="seller-stat">
+                                <span class="seller-stat-value">1.2k</span>
+                                <span class="seller-stat-label">Products</span>
+                            </div>
+                        </div>
+                    </a>
 
                     <!-- Actions -->
                     @auth
